@@ -1,4 +1,9 @@
 #regForm{
+    margin: 100px auto;
+    padding: 50px;
+}
+
+#logForm{
     margin: 200px auto;
     padding: 50px;
 }
