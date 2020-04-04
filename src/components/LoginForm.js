@@ -89,12 +89,12 @@ class LoginForm extends React.Component {
         <Form onSubmit={this.handleLogin} ref={c => this.form = c}>
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" value={this.state.email} onChange={this.onChangeUsername} validations={[required]} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+        <Input type="email" class="form-control" value={this.state.email} onChange={this.onChangeUsername} validations={[required]} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
         <label for="exampleInputhaslo1">Password</label>
-        <input type="password" value={this.state.haslo} onChange={this.onChangePassword} validations={[required]} class="form-control" id="exampleInputhaslo1" placeholder="Enter password"/>
+        <Input type="password" value={this.state.haslo} onChange={this.onChangePassword} validations={[required]} class="form-control" id="exampleInputhaslo1" placeholder="Enter password"/>
     </div>
     <div className="form-group">
               <button

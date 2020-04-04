@@ -12,6 +12,8 @@ import {
   } from "react-router-dom";
 import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
+import Profile from './profile-info'
+import UserService from "../services/user-service"; 
 
 class App extends React.Component {
 
@@ -25,6 +27,7 @@ class App extends React.Component {
                     <Route path="/" exact component={Home}/>
                     <Route path="/register" component={RegisterForm}/>
                     <Route path="/logowanie" component={LoginForm}/>
+                    <Route path="/profile" component={Profile}/>
                 </Switch>
                 <Footer />
             </div>
