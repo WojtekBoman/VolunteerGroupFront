@@ -25,10 +25,13 @@ class Navbar extends React.Component{
         const user = AuthService.getCurrentUser();
 
         if(user) {
+
+          console.log(user);
             this.setState({
                 currentUser: AuthService.getCurrentUser(),
-                showPrzewodniczacyBoard: user.roles.includes("prz"),
-                showPracownikBoard: user.roles.includes("pra")
+                showWolontariuszBoard: user.roles.includes("ROLE_WOLONTARIUSZ"),
+                showPrzewodniczacyBoard: user.roles.includes("ROLE_PRZEWODNICZACY"),
+                showPracownikBoard: user.roles.includes("ROLE_PRACOWNIK")
             })
         }
     }
@@ -39,8 +42,8 @@ class Navbar extends React.Component{
 
     render(){
 
-        const { currentUser, showPracownikBoard, showPrzewodniczacyBoard } = this.state;
-
+        const { currentUser,showWolontariuszBoard, showPracownikBoard, showPrzewodniczacyBoard } = this.state;
+        console.log(showWolontariuszBoard)
         return (
             <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
             <div class="container-fluid">
@@ -52,21 +55,43 @@ class Navbar extends React.Component{
                 </button>
             </div>
 
-            {/* {showPrzewodniczacyBoard && (
+            {/* {/* {showPrzewodniczacyBoard && (
                 <li className="nav-item">
                   <Link to={"/mod"} className="nav-link">
                     Przewo Board
                   </Link>
                 </li>
-              )}
+              )} */}
+
+              {showWolontariuszBoard && (
+                <div className="navbar-nav ml-auto">
+                  <Link to={"/wol"} className="nav-link">
+                  <li className="nav-item">
+                    Wolontariusz
+                    </li>
+                  </Link>
+                  </div>
+              )} 
+
+              {showPrzewodniczacyBoard && (
+                <div className="navbar-nav ml-auto">
+                  <Link to={"/prz"} className="nav-link">
+                  <li className="nav-item">
+                    Ekran przewodniczącego
+                    </li>
+                  </Link>
+                  </div>
+              )}  
 
               {showPracownikBoard && (
-                <li className="nav-item">
-                  <Link to={"/admin"} className="nav-link">
-                    Prac Board
+                  <Link to={"/pra"} className="nav-link">
+                  <li className="nav-item">
+                    Ekran pracownika
+                    </li>
                   </Link>
-                </li>
-              )} */}
+              )}  
+
+
 {/* 
               {currentUser && (
                 <li className="nav-item">
@@ -99,7 +124,7 @@ class Navbar extends React.Component{
                         <a class="nav-link " href="#">Logowanie</a>
                     </li>
                     </Link>
-                    <Link to="/register"> 
+                    <Link to="/rejestracja"> 
                     <li class="nav-item">
                         <a class="nav-link" href="#">Rejestracja</a>
                     </li>

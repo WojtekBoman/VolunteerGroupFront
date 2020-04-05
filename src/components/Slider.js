@@ -3,8 +3,20 @@ import ReactDOM from 'react-dom';
 import background1 from '../img/background1.jpg'
 import background2 from '../img/background2.jpg'
 import background3 from '../img/background3.jpg'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-const Slider = () => {
+class Slider extends React.Component {
+
+  constructor(props){
+    super(props);
+  }
+
+  render(){
     return(
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -18,8 +30,14 @@ const Slider = () => {
                     <div class="carousel-caption">
                         <h1 class="display-2">Dołącz do nas</h1>
                         <h3>I ty możesz pomagać</h3>
-                        <button type="button" class="btn btn-outline-light btn-lg">Zaloguj się</button>
-                        <button type="button" class="btn btn-warning btn-lg">Załóż konto</button>
+                        <Link to="/logowanie">
+                        <button type="button" style={{margin:"5px"}} 
+                        class="btn btn-outline-light btn-lg">Zaloguj się</button>
+                        </Link>
+                        <Link to="/rejestracja">
+                        <button type="button" style={{margin:"5px"}} 
+                        class="btn btn-warning btn-lg">Załóż konto</button>
+                        </Link>
                     </div>
             </div>
             <div class="carousel-item">
@@ -46,10 +64,9 @@ const Slider = () => {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
-
-    
+      </div> 
     )
+  }
 }
 
 export default Slider;

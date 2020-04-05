@@ -25,7 +25,7 @@ class App extends React.Component {
                 <Navbar />
                 <Switch>
                     <Route path="/" exact component={Home}/>
-                    <Route path="/register" component={RegisterForm}/>
+                    <Route path="/rejestracja" component={RegisterForm}/>
                     <Route path="/logowanie" component={LoginForm}/>
                     <Route path="/profile" component={Profile}/>
                 </Switch>

@@ -175,6 +175,9 @@ class RegisterForm extends React.Component {
     }
 
     render(){
+
+    const {succesful} = this.state;
+    console.log("Succesful :",succesful);
     return (
         <div class="container bg-light border rounded border-dark" id="regForm">
         <Form onSubmit={this.handleRegister}
@@ -182,7 +185,7 @@ class RegisterForm extends React.Component {
               this.form = c;
             }}>
     
-    {!this.state.successful && (
+    {!succesful && (
     <div>    
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
@@ -224,14 +227,21 @@ class RegisterForm extends React.Component {
               </div>
             )}
 
-            {this.state.succesful && (
-              <div className="form-group">
+            {succesful && (
+              <div className="text-center">
+                <header>
+                  <h3>Dziękujemy za chęć niesienia pomocy !</h3>
+                </header>
+                <hr className="my-4" />
+              <div className="form-group" style={{margin: "125px"}}>
                 <div
                   className={"alert alert-success"}
                   role="alert"
                 >
                   {this.state.message}
                 </div>
+              </div>
+              <button type="button" onClick={() => this.props.history.push('/logowanie')} style={{width:"50%"}} className="btn btn-dark">Przejdź do ekranu logowania</button>
               </div>
             )}
 
