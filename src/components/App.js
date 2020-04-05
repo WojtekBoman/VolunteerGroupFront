@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import Navbar from './Navbar'
+import MessagesMenu from './MessagesMenu'
 import Home from './Home'
+import EventsMenu from './EventsMenu'
 import Footer from './Footer'
 import '../styles/app.css'
 import {
@@ -17,7 +19,6 @@ import UserService from "../services/user-service";
 
 class App extends React.Component {
 
-
     render() {
         return (
             <Router>
@@ -28,6 +29,8 @@ class App extends React.Component {
                     <Route path="/rejestracja" component={RegisterForm}/>
                     <Route path="/logowanie" component={LoginForm}/>
                     <Route path="/profile" component={Profile}/>
+                    <Route path="/wiadomosci" component={MessagesMenu}/>
+                    <Route path="/wydarzenia" component={EventsMenu}/>
                 </Switch>
                 <Footer />
             </div>

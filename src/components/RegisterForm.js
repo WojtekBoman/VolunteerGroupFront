@@ -15,7 +15,7 @@ const required = value => {
     return (
 
       <div className="alert alert-danger" role="alert">
-        This field is required!
+        To pole jest wymagane!
       </div>
     
     );
@@ -26,27 +26,27 @@ const email = value => {
   if (!isEmail(value)) {
     return (
       <div className="alert alert-danger" role="alert">
-        This is not a valid email.
+        To nie jest poprawny email.
       </div>
     );
   }
 };
 
 const vfname = value => {
-  if (value.length < 3 || value.length > 20) {
+  if (value.length < 3 || value.length > 30) {
     return (
       <div className="alert alert-danger" role="alert">
-        The username must be between 3 and 20 characters.
+        Imię musi zawierać od 3 do 30 znaków.
       </div>
     );
   }
 };
 
 const vlname = value => {
-    if (value.length < 3 || value.length > 20) {
+    if (value.length < 3 || value.length > 30) {
       return (
         <div className="alert alert-danger" role="alert">
-          The username must be between 3 and 20 characters.
+          Nazwisko musi zawierać od 3 do 30 znaków.
         </div>
       );
     }
@@ -56,7 +56,7 @@ const vpassword = value => {
   if (value.length < 6 || value.length > 40) {
     return (
       <div className="alert alert-danger" role="alert">
-        The password must be between 6 and 40 characters.
+        Hasło musi zawierać od 6 do 40 znaków.
       </div>
     );
   }
@@ -66,7 +66,7 @@ const vrepeat = (value) => {
     if(value !== this.state.haslo){
         return (
             <div className="alert alert-danger" role="alert">
-              Passwords are different;
+              Hasła są różne.
             </div>
         );
     }
@@ -138,7 +138,7 @@ class RegisterForm extends React.Component {
         this.form.validateAll();
         
         if(this.state.haslo !== this.state.powtorzoneHaslo) {
-            this.setState({message : "Passwords are different"});
+            this.setState({message : "Hasła są różne."});
             return;
         }
 
@@ -186,40 +186,44 @@ class RegisterForm extends React.Component {
             }}>
     
     {!succesful && (
-    <div>    
+    <div>
+      <header>
+        <h1>Dołącz do nas</h1>
+        <hr className="my-4"/>  
+      </header>    
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <Input type="email" value={this.state.email} onChange={this.onChangeEmail} validations={[required, email]} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <label for="exampleInputEmail1">Adres e-mail</label>
+        <Input type="email" value={this.state.email} onChange={this.onChangeEmail} validations={[required, email]} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Podaj adres e-mail"/>
+        <small id="emailHelp" class="form-text text-muted">Możesz być pewny że twoje dane będą bezpieczne.</small>
     </div>
     <div class="form-group">
-    <label for="exampleInputFirstName">First name</label>
-    <Input type="text" value={this.state.imie} onChange={this.onChangeFirstName} validations={[required, vfname]} className="form-control" id="exampleInputFirstName" placeholder="First name"/>
+    <label for="exampleInputFirstName">Imię</label>
+    <Input type="text" value={this.state.imie} onChange={this.onChangeFirstName} validations={[required, vfname]} className="form-control" id="exampleInputFirstName" placeholder="Podaj swoje imię"/>
     </div>
     <div class="form-group">
-    <label for="exampleInputLastName">Last name</label>
-    <Input type="text" value={this.state.nazwisko} onChange={this.onChangeLastName} validations={[required, vlname]} className="form-control" id="exampleInputLastName" placeholder="Last name"/>
+    <label for="exampleInputLastName">Nazwisko</label>
+    <Input type="text" value={this.state.nazwisko} onChange={this.onChangeLastName} validations={[required, vlname]} className="form-control" id="exampleInputLastName" placeholder="Podaj swoje nazwisko"/>
     </div>
     <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <Input type="password" value={this.state.haslo} onChange={this.onChangePassword} validations={[required, vpassword]} className="form-control" id="exampleInputPassword1" placeholder="Password"/>
+    <label for="exampleInputPassword1">Hasło</label>
+    <Input type="password" value={this.state.haslo} onChange={this.onChangePassword} validations={[required, vpassword]} className="form-control" id="exampleInputPassword1" placeholder="Podaj hasło"/>
     </div>
     <div class="form-group">
-    <label for="exampleInputPassword1">Repeat password</label>
-    <Input type="password" value={this.state.powtorzoneHaslo} validations={[required, vpassword]}  onChange={this.onChangeRepeatPassword} validations={[required, vpassword]} className="form-control" id="exampleInputPassword" placeholder="Repeat password"/>
+    <label for="exampleInputPassword1">Powtórz hasło</label>
+    <Input type="password" value={this.state.powtorzoneHaslo} validations={[required, vpassword]}  onChange={this.onChangeRepeatPassword} validations={[required, vpassword]} className="form-control" id="exampleInputPassword" placeholder="Podaj swoje hasło"/>
     </div>
 
     <div className="form-group">
-    <Input className="btn btn-primary btn-block" type="submit" value="Register"/>
+    <Input className="btn btn-dark btn-block" type="submit" value="Zarejestruj się"/>
     </div>
     </div>
 
     )}
 
-            {this.state.message && !this.state.succesful && (
+            {this.state.message && !succesful && (
               <div className="form-group">
                 <div
-                  className={"alert alert-primary"}
+                  className={"alert alert-danger"}
                   role="alert"
                 >
                   {this.state.message}

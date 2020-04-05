@@ -10,7 +10,7 @@ const required = value => {
     if (!value) {
       return (
         <div className="alert alert-danger" role="alert">
-          This field is required!
+          To pole jest wymagane !
         </div>
       );
     }
@@ -86,25 +86,28 @@ class LoginForm extends React.Component {
     render(){
     return (
         <div class="container bg-light border rounded border-dark" id="logForm">
+          <header>
+            <h2>Logowanie</h2>
+            <hr className="my-4"/>
+          </header>
         <Form onSubmit={this.handleLogin} ref={c => this.form = c}>
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <Input type="email" class="form-control" value={this.state.email} onChange={this.onChangeUsername} validations={[required]} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <label for="exampleInputEmail1">Adres e-mail</label>
+        <Input type="email" className="form-control" value={this.state.email} onChange={this.onChangeUsername} validations={[required]} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Podaj swój adres e-mail"/>
     </div>
     <div class="form-group">
-        <label for="exampleInputhaslo1">Password</label>
-        <Input type="password" value={this.state.haslo} onChange={this.onChangePassword} validations={[required]} class="form-control" id="exampleInputhaslo1" placeholder="Enter password"/>
+        <label for="exampleInputhaslo1">Hasło</label>
+        <Input type="password" value={this.state.haslo} onChange={this.onChangePassword} validations={[required]} className="form-control" id="exampleInputhaslo1" placeholder="Podaj swoje hasło"/>
     </div>
     <div className="form-group">
               <button
-                className="btn btn-primary"
+                className="btn btn-block btn-dark"
                 disabled={this.state.loading}
               >
                 {this.state.loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}
-                <span>Login</span>
+                <span>Zaloguj się</span>
               </button>
             </div>
 

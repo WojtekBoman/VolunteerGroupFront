@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import background1 from '../img/background1.jpg'
 import background2 from '../img/background2.jpg'
 import background3 from '../img/background3.jpg'
+import AuthService from '../services/auth-service'
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,9 +15,16 @@ class Slider extends React.Component {
 
   constructor(props){
     super(props);
+
+    this.state = {
+      isLogged: AuthService.getCurrentUser()
+    }
   }
 
   render(){
+
+    const {isLogged} = this.state;
+
     return(
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -28,6 +36,7 @@ class Slider extends React.Component {
             <div class="carousel-item active">
                 <img class="d-block w-100" src={background1} alt="First slide"/>
                     <div class="carousel-caption">
+                      {!isLogged && (<div>
                         <h1 class="display-2">Dołącz do nas</h1>
                         <h3>I ty możesz pomagać</h3>
                         <Link to="/logowanie">
@@ -38,6 +47,9 @@ class Slider extends React.Component {
                         <button type="button" style={{margin:"5px"}} 
                         class="btn btn-warning btn-lg">Załóż konto</button>
                         </Link>
+                        </div>)
+                    }
+                     {isLogged && (<div><h1 class="display-2">Dziękujemy że jesteś !</h1></div>)}
                     </div>
             </div>
             <div class="carousel-item">

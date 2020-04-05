@@ -65,9 +65,14 @@ class Navbar extends React.Component{
 
               {showWolontariuszBoard && (
                 <div className="navbar-nav ml-auto">
-                  <Link to={"/wol"} className="nav-link">
+                  <Link to={"/wiadomosci"} className="nav-link">
                   <li className="nav-item">
-                    Wolontariusz
+                    Wiadomości
+                    </li>
+                  </Link>
+                  <Link to={"/wydarzenia"} className="nav-link">
+                  <li className="nav-item">
+                    Wydarzenia
                     </li>
                   </Link>
                   </div>
