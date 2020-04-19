@@ -1,6 +1,5 @@
 {
   "name": "reactjs",
-  "homepage": "http://WojtekBoman.github.io/VolunteerGroupFront",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,11 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build" 
+    "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "https://psipatrol.herokuapp.com",
   "eslintConfig": {
     "extends": "react-app"
   },
