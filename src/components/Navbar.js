@@ -47,7 +47,7 @@ class Navbar extends React.Component{
         return (
             <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
             
-                <Link to="/" className="navbar-brand">
+                <Link to="/VolunteerGroup_Front" className="navbar-brand">
                 <h3>Psi Patrol</h3>
                 </Link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -122,11 +122,11 @@ class Navbar extends React.Component{
                     {currentUser.email}
                     </li>
                   </Link>
-                <li className="nav-item">
-                  <a href="/logowanie" className="nav-link" onClick={this.logout}>
-                    Wyloguj
-                  </a>
-                </li>
+                  <Link to="/logowanie">
+                    <li class="nav-item" onClick={this.logout}>
+                        <a class="nav-link" href="#">Wyloguj</a>
+                    </li>
+                    </Link>
               </div>
             ) : (
                 <div class="collapse navbar-collapse" id="navbarResponsive">
