@@ -1,5 +1,6 @@
 {
   "name": "reactjs",
+  "homepage": "http://WojtekBoman.github.io/VolunteerGroupFront",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build" 
   },
   "proxy": "http://localhost:8080",
   "eslintConfig": {
@@ -44,6 +47,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.2",
+    "gh-pages": "^2.2.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0"
   }
