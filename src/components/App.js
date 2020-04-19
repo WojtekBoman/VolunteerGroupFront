@@ -27,11 +27,11 @@ class App extends React.Component {
 
     render() {
         return (
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
             <div>
                 <Navbar />
                 <Switch>
-                    <Route path="/VolunteerGroup_Front" exact component={Home}/>
+                    <Route path="/" exact component={Home}/>
                     <Route path="/rejestracja" component={RegisterForm}/>
                     <Route path="/logowanie" component={LoginForm}/>
                     <Route path="/profile" component={Profile}/>
