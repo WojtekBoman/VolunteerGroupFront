@@ -1,27 +1,37 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
-class Event extends React.Component {
+const Event = (props) => {
 
-    render(){
         return(
             <div class="jumbotron">
-                    <h1 class="display-4">Zbiórka charytatywna </h1>
-                    <p class="lead">Wrocław, ul.Pomocy, 12.04.2020r.</p>
+                    <h1 class="display-4">{props.nazwa}</h1>
+                    <h3>{props.kategoria}</h3>
+                    <p class="lead">{props.miejsce}</p>
+                    <p class="lead">{props.dataRozpoczecia}</p>
+                    <p class="lead">{props.data_key}</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="4"
+                        aria-valuemin="0" aria-valuemax={props.liczbaPotrzebnychWolontariuszy} style={{width:"70%"}}>
+                            <span class="sr-only"></span>
+                        </div>
+                    </div>
                     <hr class="my-4"/>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>{props.opis}</p>
                     <p class="lead">
-                        <a class="btn btn-success btn-lg" style={{margin:"5px"}} href="#" role="button">Zobacz więcej</a>
+                        <Link to={"eventDetails/"+props.data_key}><button class="btn btn-success btn-lg" style={{margin:"5px"}} href={"/eventDetails/:"+props.data_key} role="button">Zobacz więcej</button></Link>
                         <a class="btn btn-danger btn-lg" style={{margin:"5px"}} href="#" role="button">Anuluj udział</a>
                     </p>
              </div>
         )
         
     }
-}
+
 
 export default Event;

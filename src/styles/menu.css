@@ -1,9 +1,21 @@
 #eventMenu {
-    margin: 100px auto;
+    margin: 200px auto;
     padding: 50px;
+
 }
 
-.scrollMenu {
+#eventDetails {
+    margin: 100px auto;
+    padding: 50px;
+
+}
+
+/* .scrollMenu {
     height: 400px;
     overflow-y: scroll;
+} */
+
+
+#loading {
+    margin: 150px auto;
 }

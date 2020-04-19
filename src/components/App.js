@@ -1,21 +1,27 @@
+// IMPORT REACT 
 import React from 'react';
 import ReactDOM from 'react-dom'
-import Navbar from './Navbar'
-import MessagesMenu from './MessagesMenu'
-import Home from './Home'
-import EventsMenu from './EventsMenu'
-import Footer from './Footer'
-import '../styles/app.css'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
   } from "react-router-dom";
+
+// IMPORT COMPONENTS
+import Navbar from './Navbar'
+import MessagesMenu from './MessagesMenu'
+import Home from './Home'
+import EventCreator from './EventCreator'
+import EventsMenu from './EventsMenu'
+import Footer from './Footer'
 import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
 import Profile from './profile-info'
-import UserService from "../services/user-service"; 
+import EventDetails from "./EventDetails"
+
+// IMPORT CSS
+import '../styles/app.css'
 
 class App extends React.Component {
 
@@ -31,6 +37,8 @@ class App extends React.Component {
                     <Route path="/profile" component={Profile}/>
                     <Route path="/wiadomosci" component={MessagesMenu}/>
                     <Route path="/wydarzenia" component={EventsMenu}/>
+                    <Route path="/noweWydarzenie" component={EventCreator}/>
+                    <Route path="/eventDetails/:id" component={EventDetails} />
                 </Switch>
                 <Footer />
             </div>

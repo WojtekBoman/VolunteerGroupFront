@@ -46,14 +46,15 @@ class Navbar extends React.Component{
         console.log(showWolontariuszBoard)
         return (
             <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-            <div class="container-fluid">
+            
                 <Link to="/" className="navbar-brand">
                 <h3>Psi Patrol</h3>
                 </Link>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
                 </button>
-            </div>
+           
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
             {/* {/* {showPrzewodniczacyBoard && (
                 <li className="nav-item">
@@ -64,7 +65,7 @@ class Navbar extends React.Component{
               )} */}
 
               {showWolontariuszBoard && (
-                <div className="navbar-nav ml-auto">
+                <div className="navbar-nav">
                   <Link to={"/wiadomosci"} className="nav-link">
                   <li className="nav-item">
                     Wiadomości
@@ -79,12 +80,19 @@ class Navbar extends React.Component{
               )} 
 
               {showPrzewodniczacyBoard && (
-                <div className="navbar-nav ml-auto">
-                  <Link to={"/prz"} className="nav-link">
+                <div className="navbar-nav">
+                  {/* <Link to={"/prz"} className="nav-link">
                   <li className="nav-item">
                     Ekran przewodniczącego
                     </li>
-                  </Link>
+                  </Link> */}
+                  <li class="nav-item dropdown">
+                  <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Wydarzenia</a>
+                  <div class="dropdown-menu">
+                        <Link to={"/wydarzenia"} className="dropdown-item">Przeglądaj</Link>
+                        <Link to={"/noweWydarzenie"} className="dropdown-item">Dodaj</Link>
+                    </div>
+                  </li>
                   </div>
               )}  
 
@@ -126,7 +134,7 @@ class Navbar extends React.Component{
     
                     <Link to="/logowanie">
                     <li class="nav-item">
-                        <a class="nav-link " href="#">Logowanie</a>
+                        <a class="nav-link" href="#">Logowanie</a>
                     </li>
                     </Link>
                     <Link to="/rejestracja"> 
@@ -138,6 +146,7 @@ class Navbar extends React.Component{
             </div>
 
             )}
+            </div>
         </nav>
         )
     }
