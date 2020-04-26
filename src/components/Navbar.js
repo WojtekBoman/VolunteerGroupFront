@@ -5,8 +5,10 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useHistory
   } from "react-router-dom";
+  import history from '../history';
 
 class Navbar extends React.Component{
 
@@ -37,7 +39,9 @@ class Navbar extends React.Component{
     }
 
     logout(){
+       
         AuthService.logout();
+        history.push('/logowanie')
     }
 
     render(){
@@ -123,8 +127,9 @@ class Navbar extends React.Component{
                     </li>
                   </Link>
                     <li class="nav-item" onClick={this.logout}>
-                        <a class="nav-link" href="/VolunteerGroup_Front/logowanie">Wyloguj</a>
+                        <a class="nav-link" href="">Wyloguj</a>
                     </li>
+                    
               </div>
             ) : (
                 <div class="collapse navbar-collapse" id="navbarResponsive">

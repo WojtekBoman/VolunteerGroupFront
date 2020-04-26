@@ -115,7 +115,7 @@ class EventCreator extends React.Component {
                 this.state.dataRozpoczecia).then(
                     () => {
                       this.props.history.push("/wydarzenia");
-                      window.location.reload();
+                      window.location.reload(false);
                     },
                     error => {
                       const resMessage =

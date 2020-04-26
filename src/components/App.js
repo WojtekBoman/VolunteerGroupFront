@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route,
     Link
@@ -19,15 +19,19 @@ import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
 import Profile from './profile-info'
 import EventDetails from "./EventDetails"
+import history from '../history'
 
 // IMPORT CSS
 import '../styles/app.css'
 
 class App extends React.Component {
 
+
+    
+
     render() {
         return (
-            <Router basename={process.env.PUBLIC_URL}>
+            <Router basename={process.env.PUBLIC_URL} history={history}>
             <div>
                 <Navbar />
                 <Switch>
