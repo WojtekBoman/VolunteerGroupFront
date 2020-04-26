@@ -121,6 +121,11 @@ class Navbar extends React.Component{
 
             {currentUser ? (
               <div className="navbar-nav ml-auto">
+                <Link to={"/userEvents"} className="nav-link">
+                  <li className="nav-item">
+                    Twoje wydarzenia
+                    </li>
+                  </Link>
                   <Link to={"/profile"} className="nav-link">
                   <li className="nav-item">
                     {currentUser.email}
@@ -129,6 +134,7 @@ class Navbar extends React.Component{
                     <li class="nav-item" onClick={this.logout}>
                         <a class="nav-link" href="">Wyloguj</a>
                     </li>
+                    
                     
               </div>
             ) : (

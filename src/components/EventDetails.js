@@ -1,5 +1,7 @@
 import React from 'react';
 import eventService from '../services/event-service';
+import participationService from '../services/participation-service';
+import authHeader from '../services/auth-header';
 import {
     BrowserRouter as Router,
     Switch,
@@ -11,6 +13,8 @@ class EventDetails extends React.Component {
 
     constructor(props) {
         super(props);
+        this.handleParticipation = this.handleParticipation.bind(this);
+        this.handleCancelParticipation = this.handleCancelParticipation.bind(this);
 
         this.state = {
             loading: true,
@@ -22,6 +26,32 @@ class EventDetails extends React.Component {
         const {data} = await eventService.getWydarzeniaId(this.props.match.params.id)
         this.setState({loading: false,data})
         console.log(data);
+    }
+
+    handleParticipation(e) {
+        e.preventDefault();
+        let url = `http://localhost:8080/api/udzial/wez/${this.props.match.params.id}`;
+        let options = {
+            method: 'POST',
+            headers : authHeader()
+            };
+        fetch(url,options).then((response) => 
+            console.log(response)
+        );
+        
+    }
+
+    handleCancelParticipation(e) {
+        e.preventDefault();
+        let url = `http://localhost:8080/api/udzial/anuluj/${this.props.match.params.id}`;
+        let options = {
+            method: 'POST',
+            headers : authHeader()
+            };
+        fetch(url,options).then((response) => {
+            console.log(response);
+        }
+        )
     }
 
     render(){
@@ -46,8 +76,8 @@ class EventDetails extends React.Component {
                             {/* <li class="list-group-item">{this.state.data.idTwor}</li> */}
                             </ul>
                         <p>{this.state.data.opis}</p>
-                        <a class="btn btn-success btn-lg" style={{margin:"5px"}} href="#" role="button">Weź udział</a>
-                        <a class="btn btn-danger btn-lg" style={{margin:"5px"}} href="#" role="button">Anuluj udział</a>
+                        <a class="btn btn-success btn-lg" onClick={this.handleParticipation} style={{margin:"5px"}} href="#" role="button">Weź udział</a>
+                        <a class="btn btn-danger btn-lg" onClick={this.handleCancelParticipation} style={{margin:"5px"}} href="#" role="button">Anuluj udział</a>
                         <Link to="/wydarzenia"><button class="btn btn-primary btn-lg" style={{margin:"5px"}} role="button">Wróć do wydarzeń</button></Link>
                     </div>
                   )

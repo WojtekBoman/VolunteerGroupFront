@@ -19,6 +19,7 @@ import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
 import Profile from './profile-info'
 import EventDetails from "./EventDetails"
+import UserEvents from "./UserEvents"
 import history from '../history'
 
 // IMPORT CSS
@@ -42,6 +43,7 @@ class App extends React.Component {
                     <Route path="/wiadomosci" component={MessagesMenu}/>
                     <Route path="/wydarzenia" component={EventsMenu}/>
                     <Route path="/noweWydarzenie" component={EventCreator}/>
+                    <Route path="/userEvents" component={UserEvents} />
                     <Route path="/eventDetails/:id" component={EventDetails} />
                 </Switch>
                 <Footer />
