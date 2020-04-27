@@ -11,7 +11,19 @@ Zaznaczamy że chcemy wziac udzial - po kliknieciu otrzymamy komunikat o przypis
 Mozemy brac udzial tylko w wydarzeniach ktore maja jeszcze wolne miejsca
 
 ![image](https://user-images.githubusercontent.com/47774969/80374040-54f47400-8896-11ea-82d6-f3a83673b393.png)
- Przechodzimy do zakldaki Twoje wydarzenia
+
+![image](https://user-images.githubusercontent.com/47774969/80374185-908f3e00-8896-11ea-9c15-099f577e1303.png)
+ Przechodzimy do zakladki Twoje wydarzenia
+ ![image](https://user-images.githubusercontent.com/47774969/80374329-cdf3cb80-8896-11ea-9d2d-90b84730a077.png)
+ 
+ Wchodzimy w szczegoly wydarzenia i możemy anulować udział, po anulowaniu zniknie ono z naszych wydarzeń. Zwolni się miejsce w wydarzeniu.
+ 
+ ![image](https://user-images.githubusercontent.com/47774969/80374652-45c1f600-8897-11ea-92cb-f341446bc44b.png)
+ 
+ ![image](https://user-images.githubusercontent.com/47774969/80374740-73a73a80-8897-11ea-929c-03e8e67deadc.png)
+
+
+
  
  
 
