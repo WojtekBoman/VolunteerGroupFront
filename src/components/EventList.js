@@ -10,7 +10,7 @@ const EventList = (props) => {
             {props.events.data.map(event => {
                 return <Event key={event.idZdarzenia} data_key={event.idZdarzenia} nazwa={event.nazwa} kategoria={event.kategoria} 
                 miejsce={event.miejsce} opis={event.opis} adres={event.adres} dataRozpoczecia={event.dataRozpoczecia}
-                liczbaPotrzebnychWolontariuszy={event.liczbaPotrzebnychWolontariuszy}/>
+                liczbaPotrzebnychWolontariuszy={event.liczbaPotrzebnychWolontariuszy} liczbaPrzypisanychWolontariuszy={event.liczbaPrzypisanychWolontariuszy}/>
             })}
         </div>);
     }

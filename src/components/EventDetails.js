@@ -1,6 +1,7 @@
 import React from 'react';
 import eventService from '../services/event-service';
 import participationService from '../services/participation-service';
+import authService from '../services/auth-service';
 import authHeader from '../services/auth-header';
 import {
     BrowserRouter as Router,
@@ -18,38 +19,71 @@ class EventDetails extends React.Component {
 
         this.state = {
             loading: true,
-            data:{}
+            loadingUdzial:true,
+            data:{},
+            submitLoading: false,
+            cancelLoading: false,
+            message: '',
+            uzytkownicy:null,
+            udzial:false,
+            isFull: false
         }
+    }
+
+    async getUzytkownicy() {
+        let url = `https://psipatrol.herokuapp.com/api/udzial/uzytkownicy-wydarzenia/${this.props.match.params.id}`;
+        let options = {
+            method: 'GET',
+            headers : authHeader()
+            };
+
     }
 
     async componentDidMount() {
         const {data} = await eventService.getWydarzeniaId(this.props.match.params.id)
         this.setState({loading: false,data})
         console.log(data);
+        const isFull = data.liczbaPotrzebnychWolontariuszy == data.liczbaPrzypisanychWolontariuszy;
+        this.setState({isFull});
     }
 
     handleParticipation(e) {
         e.preventDefault();
-        let url = `http://localhost:8080/api/udzial/wez/${this.props.match.params.id}`;
+        this.setState({submitLoading:true})
+        let url = `https://psipatrol.herokuapp.com/api/udzial/wez/${this.props.match.params.id}`;
         let options = {
             method: 'POST',
             headers : authHeader()
             };
-        fetch(url,options).then((response) => 
-            console.log(response)
+        fetch(url,options).then((response) => {
+            if(response.status == 200) {
+                this.setState({submitLoading:false, message:"Przypisano cie do wydarzenia"});
+            }else if(response.status == 409) {
+                this.setState({submitLoading:false, message:"Bierzesz udzial w tym wydarzeniu"});
+            }else{
+                this.setState({submitLoading:false, message:"Wystapil blad. Sprobuj ponownie"});
+            }
+        }
         );
         
     }
 
     handleCancelParticipation(e) {
         e.preventDefault();
-        let url = `http://localhost:8080/api/udzial/anuluj/${this.props.match.params.id}`;
+        this.setState({cancelLoading:true})
+        let url = `https://psipatrol.herokuapp.com/api/udzial/anuluj/${this.props.match.params.id}`;
         let options = {
             method: 'POST',
             headers : authHeader()
             };
         fetch(url,options).then((response) => {
-            console.log(response);
+            if(response.status == 200) {
+                this.setState({cancelLoading:false, message:"Anulowano twoj udzial w wydarzeniu"});
+            }else if(response.status == 409) {
+                this.setState({cancelLoading:false, message:"Nie bierzesz udzialu w tym wydarzeniu!"});
+            }else{
+                this.setState({cancelLoading:false, message:"Wystapil blad. Sprobuj ponownie"});
+            }
         }
         )
     }
@@ -75,11 +109,32 @@ class EventDetails extends React.Component {
                             <li class="list-group-item">{this.state.data.dataRozpoczecia}</li>
                             {/* <li class="list-group-item">{this.state.data.idTwor}</li> */}
                             </ul>
+                        
                         <p>{this.state.data.opis}</p>
-                        <a class="btn btn-success btn-lg" onClick={this.handleParticipation} style={{margin:"5px"}} href="#" role="button">Weź udział</a>
-                        <a class="btn btn-danger btn-lg" onClick={this.handleCancelParticipation} style={{margin:"5px"}} href="#" role="button">Anuluj udział</a>
-                        <Link to="/wydarzenia"><button class="btn btn-primary btn-lg" style={{margin:"5px"}} role="button">Wróć do wydarzeń</button></Link>
+                        {!this.state.isFull && (<button class="btn btn-success btn-lg" onClick={this.handleParticipation} 
+                        style={{margin:"5px"}} href="#" role="button">
+                        {this.state.submitLoading && (
+                            <span className="spinner-border spinner-border-sm"></span>
+                        )} 
+                        Weź udział
+                        </button>)}
+                        <button class="btn btn-danger btn-lg" onClick={this.handleCancelParticipation} 
+                        style={{margin:"5px"}} href="#" role="button">
+                            {this.state.cancelLoading && (
+                            <span className="spinner-border spinner-border-sm"></span>
+                        )} 
+                            Anuluj udział</button>
+                        <Link to="/wydarzenia"><button class="btn btn-primary btn-lg" 
+                        style={{margin:"5px"}} role="button">Wróć do wydarzeń</button></Link>
+                        {this.state.message && (
+              <div className="form-group">
+                <div className="alert alert-danger" role="alert">
+                  {this.state.message}
+                </div>
+              </div>
+            )}
                     </div>
+                    
                   )
                   }
             

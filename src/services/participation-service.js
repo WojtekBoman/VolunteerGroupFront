@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-const API_URL = 'http://localhost:8080/api/';
+const API_URL = 'https://psipatrol.herokuapp.com/api/';
 
 class participationService {
 
@@ -17,6 +17,7 @@ class participationService {
         return axios.get(API_URL + `udzial/wydarzenia-uzytkownika`,{headers: authHeader()});
     }
 
+    
 }
 
 export default new participationService();
