@@ -1,6 +1,21 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Funkcjonalnosc brania udzialu w wydarzeniach
+
+Wybieramy wydarzenie w którym chcemy wziac udzial i wchodzimy w jego szczegoly
+
+![image](https://user-images.githubusercontent.com/47774969/80373736-d1d31e00-8895-11ea-9d40-992bda8daa92.png)
+
+Zaznaczamy że chcemy wziac udzial - po kliknieciu otrzymamy komunikat o przypisaniu do wydarzenia 
+Mozemy brac udzial tylko w wydarzeniach ktore maja jeszcze wolne miejsca
+
+![image](https://user-images.githubusercontent.com/47774969/80374040-54f47400-8896-11ea-82d6-f3a83673b393.png)
+ Przechodzimy do zakldaki Twoje wydarzenia
+ 
+ 
+
+
 ## Available Scripts
 
 In the project directory, you can run:
