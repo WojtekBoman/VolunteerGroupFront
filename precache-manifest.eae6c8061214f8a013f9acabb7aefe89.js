@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "664948e8fa82e6b4e60653fa4bdb041b",
+    "revision": "5f5dc3c7c5cc9a42afcc98d474f21577",
     "url": "/VolunteerGroup_Front/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/VolunteerGroup_Front/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "139a391b388873a9efff",
+    "revision": "ca0a6467ffe7d579e168",
     "url": "/VolunteerGroup_Front/static/css/main.0ba59d25.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/VolunteerGroup_Front/static/js/2.f4ea470f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "139a391b388873a9efff",
-    "url": "/VolunteerGroup_Front/static/js/main.37e29631.chunk.js"
+    "revision": "ca0a6467ffe7d579e168",
+    "url": "/VolunteerGroup_Front/static/js/main.78caa896.chunk.js"
   },
   {
     "revision": "74080071d525f4ea2d42",
