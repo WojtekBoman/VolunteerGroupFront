@@ -1,0 +1,8 @@
+[0502/222125.879:ERROR:file_io.cc(89)] ReadExactly: expected 1288, observed 0
+[0502/222125.879:ERROR:crash_report_database_win.cc(445)] failed to read records
+[0502/223125.879:ERROR:file_io.cc(89)] ReadExactly: expected 1288, observed 0
+[0502/223125.879:ERROR:crash_report_database_win.cc(445)] failed to read records
+[0502/223125.879:ERROR:file_io.cc(89)] ReadExactly: expected 1288, observed 0
+[0502/223125.879:ERROR:crash_report_database_win.cc(445)] failed to read records
+[0502/223625.880:ERROR:file_io.cc(89)] ReadExactly: expected 1288, observed 0
+[0502/223625.880:ERROR:crash_report_database_win.cc(445)] failed to read records
