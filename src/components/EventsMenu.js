@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import EventList from './EventList'
+import EventsPagination from './EventsPagination'
 import eventService from '../services/event-service'
 import '../styles/menu.css'
 
@@ -9,22 +10,42 @@ class EventsMenu extends React.Component {
     constructor(props){
         super(props);
 
+        this.paginate = this.paginate.bind(this);
+
         this.state = {
             loading: true,
-            events: null
+            data: [],
+            postPerPage: 2,
+            currentPage: 1
         }
     }
 
-    async componentDidMount() {
-
+    async receiveEvents() {
         console.log("LOADING",this.state.loading);
-        const events = await eventService.getWydarzenia();
-        this.setState({events});
+        const {data} = await eventService.getWydarzenia();
+        this.setState({data});
         this.setState({loading: false});
         console.log("LOADING",this.state.loading);
     }
 
+    paginate = (num) => {
+        this.setState({currentPage: num})
+    }
+
+    componentDidMount() {
+        this.receiveEvents();
+    }
+
     render() {
+
+        const {postPerPage,currentPage,data} = this.state
+
+        const indexOfLastPost = currentPage * postPerPage;
+        const indexOfFirstPost = indexOfLastPost - postPerPage;
+        const currentPosts = data.slice(indexOfFirstPost,indexOfLastPost);
+        console.log("Current posts", currentPosts);
+
+
         return (
             <div id="eventMenu" className="container bg-light border rounded border-dark">
                 <header>
@@ -37,7 +58,7 @@ class EventsMenu extends React.Component {
                   <br/>
                   <h4>Trwa pobieranie danych ...</h4>
                   <br />
-                  </div>) : (<EventList events={this.state.events}/>)
+                  </div>) : (<div><EventList events={currentPosts}/> <EventsPagination postsPerPage={postPerPage} totalEvents={data.length} paginate={this.paginate}/></div>)
                 }
             </div>
         )

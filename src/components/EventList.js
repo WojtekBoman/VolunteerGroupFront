@@ -7,7 +7,7 @@ const EventList = (props) => {
     if(props.events) {
         console.log(props.events);
         return (<div className="scrollMenu">
-            {props.events.data.map(event => {
+            {props.events.map(event => {
                 return <Event key={event.idZdarzenia} data_key={event.idZdarzenia} nazwa={event.nazwa} kategoria={event.kategoria} 
                 miejsce={event.miejsce} opis={event.opis} adres={event.adres} dataRozpoczecia={event.dataRozpoczecia}
                 liczbaPotrzebnychWolontariuszy={event.liczbaPotrzebnychWolontariuszy} liczbaPrzypisanychWolontariuszy={event.liczbaPrzypisanychWolontariuszy}/>

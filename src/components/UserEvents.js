@@ -9,19 +9,19 @@ class UserEvents extends React.Component {
 
         this.state = {
             message: "",
-            events: null,
+            data: null,
             loading:true
         }
     }
 
     async componentDidMount() {
 
-        const events = await participationService.getWydarzenia();
-        if(events.status == 204){
+        const {data} = await participationService.getWydarzenia();
+        if(data.status == 204){
             this.setState({message : "Nie bierzesz udziału w żadnym wydarzeniu !"});
             this.setState({loading:false});
         }else{
-            this.setState({events});
+            this.setState({data});
             this.setState({loading:false});
         }
     }
@@ -40,7 +40,7 @@ class UserEvents extends React.Component {
              <h4>Trwa pobieranie danych ...</h4>
              <br />
              </div>   
-            ) : (this.state.message ? (<div>{this.state.message}</div>) : <EventList events={this.state.events}/> )}
+            ) : (this.state.message ? (<div>{this.state.message}</div>) : <EventList events={this.state.data}/> )}
     </div>)
     }
 }
