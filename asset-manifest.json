@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/VolunteerGroup_Front/static/css/main.eae2bf03.chunk.css",
-    "main.js": "/VolunteerGroup_Front/static/js/main.bee5f8dd.chunk.js",
-    "main.js.map": "/VolunteerGroup_Front/static/js/main.bee5f8dd.chunk.js.map",
+    "main.js": "/VolunteerGroup_Front/static/js/main.d9eb03a5.chunk.js",
+    "main.js.map": "/VolunteerGroup_Front/static/js/main.d9eb03a5.chunk.js.map",
     "runtime-main.js": "/VolunteerGroup_Front/static/js/runtime-main.93e997b8.js",
     "runtime-main.js.map": "/VolunteerGroup_Front/static/js/runtime-main.93e997b8.js.map",
     "static/css/2.de424728.chunk.css": "/VolunteerGroup_Front/static/css/2.de424728.chunk.css",
-    "static/js/2.3271782d.chunk.js": "/VolunteerGroup_Front/static/js/2.3271782d.chunk.js",
-    "static/js/2.3271782d.chunk.js.map": "/VolunteerGroup_Front/static/js/2.3271782d.chunk.js.map",
+    "static/js/2.cccdfaff.chunk.js": "/VolunteerGroup_Front/static/js/2.cccdfaff.chunk.js",
+    "static/js/2.cccdfaff.chunk.js.map": "/VolunteerGroup_Front/static/js/2.cccdfaff.chunk.js.map",
     "index.html": "/VolunteerGroup_Front/index.html",
-    "precache-manifest.29dac31bd23b25e49d8e5ce1fdb4d1e9.js": "/VolunteerGroup_Front/precache-manifest.29dac31bd23b25e49d8e5ce1fdb4d1e9.js",
+    "precache-manifest.3d8c7428f1945be2bb75173b3c617896.js": "/VolunteerGroup_Front/precache-manifest.3d8c7428f1945be2bb75173b3c617896.js",
     "service-worker.js": "/VolunteerGroup_Front/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/VolunteerGroup_Front/static/css/2.de424728.chunk.css.map",
     "static/css/main.eae2bf03.chunk.css.map": "/VolunteerGroup_Front/static/css/main.eae2bf03.chunk.css.map",
-    "static/js/2.3271782d.chunk.js.LICENSE.txt": "/VolunteerGroup_Front/static/js/2.3271782d.chunk.js.LICENSE.txt",
+    "static/js/2.cccdfaff.chunk.js.LICENSE.txt": "/VolunteerGroup_Front/static/js/2.cccdfaff.chunk.js.LICENSE.txt",
     "static/media/background1.jpg": "/VolunteerGroup_Front/static/media/background1.de3a50ff.jpg",
     "static/media/background2.jpg": "/VolunteerGroup_Front/static/media/background2.303269b8.jpg",
     "static/media/background3.jpg": "/VolunteerGroup_Front/static/media/background3.9d42dd43.jpg"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.93e997b8.js",
     "static/css/2.de424728.chunk.css",
-    "static/js/2.3271782d.chunk.js",
+    "static/js/2.cccdfaff.chunk.js",
     "static/css/main.eae2bf03.chunk.css",
-    "static/js/main.bee5f8dd.chunk.js"
+    "static/js/main.d9eb03a5.chunk.js"
   ]
 }
