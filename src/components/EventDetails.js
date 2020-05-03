@@ -16,6 +16,7 @@ class EventDetails extends React.Component {
         super(props);
         this.handleParticipation = this.handleParticipation.bind(this);
         this.handleCancelParticipation = this.handleCancelParticipation.bind(this);
+        this.getWydarzeniaUzytkownika = this.getWydarzeniaUzytkownika.bind(this);
 
         this.state = {
             loading: true,
@@ -23,6 +24,7 @@ class EventDetails extends React.Component {
             data:{},
             submitLoading: false,
             cancelLoading: false,
+            loadingButtons: true,
             message: '',
             uzytkownicy:null,
             udzial:false,
@@ -39,12 +41,30 @@ class EventDetails extends React.Component {
 
     }
 
+    async getWydarzeniaUzytkownika() {
+        const {data} = await participationService.getWydarzenia();
+
+        if(data) {
+            const event = data.find(event => event.idZdarzenia == this.props.match.params.id);
+            if(event) {
+                this.setState({udzial: true});
+            }
+        }
+
+        
+        this.setState({loadingButtons:false})
+
+        console.log("Udział", this.state.udzial)
+    }
+
     async componentDidMount() {
         const {data} = await eventService.getWydarzeniaId(this.props.match.params.id)
         this.setState({loading: false,data})
         console.log(data);
         const isFull = data.liczbaPotrzebnychWolontariuszy == data.liczbaPrzypisanychWolontariuszy;
         this.setState({isFull});
+
+        this.getWydarzeniaUzytkownika();
     }
 
     handleParticipation(e) {
@@ -58,10 +78,13 @@ class EventDetails extends React.Component {
         fetch(url,options).then((response) => {
             if(response.status == 200) {
                 this.setState({submitLoading:false, message:"Przypisano cie do wydarzenia"});
+                window.location.reload();
             }else if(response.status == 409) {
                 this.setState({submitLoading:false, message:"Bierzesz udzial w tym wydarzeniu"});
+                window.location.reload();
             }else{
                 this.setState({submitLoading:false, message:"Wystapil blad. Sprobuj ponownie"});
+                window.location.reload();
             }
         }
         );
@@ -79,10 +102,13 @@ class EventDetails extends React.Component {
         fetch(url,options).then((response) => {
             if(response.status == 200) {
                 this.setState({cancelLoading:false, message:"Anulowano twoj udzial w wydarzeniu"});
+                window.location.reload();
             }else if(response.status == 409) {
                 this.setState({cancelLoading:false, message:"Nie bierzesz udzialu w tym wydarzeniu!"});
+                window.location.reload();
             }else{
                 this.setState({cancelLoading:false, message:"Wystapil blad. Sprobuj ponownie"});
+                window.location.reload();
             }
         }
         )
@@ -111,21 +137,26 @@ class EventDetails extends React.Component {
                             </ul>
                         
                         <p>{this.state.data.opis}</p>
-                        {!this.state.isFull && (<button class="btn btn-success btn-lg" onClick={this.handleParticipation} 
-                        style={{margin:"5px"}} href="#" role="button">
-                        {this.state.submitLoading && (
-                            <span className="spinner-border spinner-border-sm"></span>
-                        )} 
-                        Weź udział
-                        </button>)}
-                        <button class="btn btn-danger btn-lg" onClick={this.handleCancelParticipation} 
+
+                        
+
+                        {this.state.udzial && (<button class="btn btn-danger btn-lg" onClick={this.handleCancelParticipation} 
                         style={{margin:"5px"}} href="#" role="button">
                             {this.state.cancelLoading && (
                             <span className="spinner-border spinner-border-sm"></span>
-                        )} 
-                            Anuluj udział</button>
+                        )}  Anuluj udział</button>)}
+
+                        {!this.state.isFull && !this.state.udzial && (<button class="btn btn-success btn-lg" onClick={this.handleParticipation} 
+                        style={{margin:"5px"}} href="#" role="button">
+                        {this.state.submitLoading && (
+                            <span className="spinner-border spinner-border-sm"></span>
+                        )} Weź udział </button>)}
+                        
                         <Link to="/wydarzenia"><button class="btn btn-primary btn-lg" 
                         style={{margin:"5px"}} role="button">Wróć do wydarzeń</button></Link>
+
+
+
                         {this.state.message && (
               <div className="form-group">
                 <div className="alert alert-danger" role="alert">
