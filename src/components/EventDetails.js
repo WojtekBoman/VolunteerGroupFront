@@ -138,8 +138,8 @@ class EventDetails extends React.Component {
                         
                         <p>{this.state.data.opis}</p>
 
-                        
-
+                        {this.state.loadingButtons ? ( <span className="spinner-border spinner-border-sm"></span>)
+                        : (<div>
                         {this.state.udzial && (<button class="btn btn-danger btn-lg" onClick={this.handleCancelParticipation} 
                         style={{margin:"5px"}} href="#" role="button">
                             {this.state.cancelLoading && (
@@ -154,6 +154,9 @@ class EventDetails extends React.Component {
                         
                         <Link to="/wydarzenia"><button class="btn btn-primary btn-lg" 
                         style={{margin:"5px"}} role="button">Wróć do wydarzeń</button></Link>
+                        </div>)    
+                   
+                        }
 
 
 
