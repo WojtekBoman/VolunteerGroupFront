@@ -23,10 +23,10 @@ Mozemy brac udzial tylko w wydarzeniach ktore maja jeszcze wolne miejsca
  
  Wchodzimy w szczegoly wydarzenia i możemy anulować udział, po anulowaniu zniknie ono z naszych wydarzeń. Zwolni się miejsce w wydarzeniu.
  
- ![image](https://user-images.githubusercontent.com/47774969/80374652-45c1f600-8897-11ea-92cb-f341446bc44b.png)
- 
+ ![image](https://user-images.githubusercontent.com/47774969/80964797-c80b6680-8e11-11ea-8a6d-94505f32e330.png)
  ![image](https://user-images.githubusercontent.com/47774969/80964867-e07b8100-8e11-11ea-8c0d-a70e1d26db2f.png)
-![image](https://user-images.githubusercontent.com/47774969/80964797-c80b6680-8e11-11ea-8a6d-94505f32e330.png)
+![image](https://user-images.githubusercontent.com/47774969/80964978-10c31f80-8e12-11ea-843a-9e46da5f3384.png)
+
 
 
 
