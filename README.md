@@ -19,11 +19,10 @@ Mozemy brac udzial tylko w wydarzeniach ktore maja jeszcze wolne miejsca
 ![image](https://user-images.githubusercontent.com/47774969/80964700-a1e5c680-8e11-11ea-83f2-60616bc6011d.png)
 
  Przechodzimy do zakladki Twoje wydarzenia
- ![image](https://user-images.githubusercontent.com/47774969/80374329-cdf3cb80-8896-11ea-9d2d-90b84730a077.png)
+ ![image](https://user-images.githubusercontent.com/47774969/80964797-c80b6680-8e11-11ea-8a6d-94505f32e330.png)
  
  Wchodzimy w szczegoly wydarzenia i możemy anulować udział, po anulowaniu zniknie ono z naszych wydarzeń. Zwolni się miejsce w wydarzeniu.
  
- ![image](https://user-images.githubusercontent.com/47774969/80964797-c80b6680-8e11-11ea-8a6d-94505f32e330.png)
  ![image](https://user-images.githubusercontent.com/47774969/80964867-e07b8100-8e11-11ea-8c0d-a70e1d26db2f.png)
 ![image](https://user-images.githubusercontent.com/47774969/80964978-10c31f80-8e12-11ea-843a-9e46da5f3384.png)
 
