@@ -3,6 +3,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Funkcjonalnosc brania udzialu w wydarzeniach
 
+Filtrowanie wydarzeń 
+
+![image](https://user-images.githubusercontent.com/47774969/80964454-326fd700-8e11-11ea-9e7a-342b81e8a26c.png)
+
+
+
 Wybieramy wydarzenie w którym chcemy wziac udzial i wchodzimy w jego szczegoly
 
 ![image](https://user-images.githubusercontent.com/47774969/80373736-d1d31e00-8895-11ea-9d40-992bda8daa92.png)
@@ -10,9 +16,8 @@ Wybieramy wydarzenie w którym chcemy wziac udzial i wchodzimy w jego szczegoly
 Zaznaczamy że chcemy wziac udzial - po kliknieciu otrzymamy komunikat o przypisaniu do wydarzenia 
 Mozemy brac udzial tylko w wydarzeniach ktore maja jeszcze wolne miejsca
 
-![image](https://user-images.githubusercontent.com/47774969/80374040-54f47400-8896-11ea-82d6-f3a83673b393.png)
+![image](https://user-images.githubusercontent.com/47774969/80964700-a1e5c680-8e11-11ea-83f2-60616bc6011d.png)
 
-![image](https://user-images.githubusercontent.com/47774969/80374185-908f3e00-8896-11ea-9c15-099f577e1303.png)
  Przechodzimy do zakladki Twoje wydarzenia
  ![image](https://user-images.githubusercontent.com/47774969/80374329-cdf3cb80-8896-11ea-9d2d-90b84730a077.png)
  
@@ -20,7 +25,8 @@ Mozemy brac udzial tylko w wydarzeniach ktore maja jeszcze wolne miejsca
  
  ![image](https://user-images.githubusercontent.com/47774969/80374652-45c1f600-8897-11ea-92cb-f341446bc44b.png)
  
- ![image](https://user-images.githubusercontent.com/47774969/80374740-73a73a80-8897-11ea-929c-03e8e67deadc.png)
+ ![image](https://user-images.githubusercontent.com/47774969/80964867-e07b8100-8e11-11ea-8c0d-a70e1d26db2f.png)
+![image](https://user-images.githubusercontent.com/47774969/80964797-c80b6680-8e11-11ea-8a6d-94505f32e330.png)
 
 
 
