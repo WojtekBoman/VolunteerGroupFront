@@ -37,11 +37,13 @@ class EventsMenu extends React.Component {
             searchBeginDate: '',
             searchEndDate: '',
             searchNotFullChecked: false,
+            notFound:false
         }
     }
 
     async receiveEvents(currentPage) {
         console.log("LOADING", this.state.loading);
+        this.setState({loading:true});
         currentPage -= 1;
         let url = 'http://localhost:8080/api/wydarzenia/filtered?name&place&category&onlyAvailable&endDate&beginDate&size=' + this.state.postPerPage + '&page=' + currentPage;
         let options = {
@@ -52,13 +54,15 @@ class EventsMenu extends React.Component {
             .then(response => response.json()).then((response) => this.setState({
                 posts: response.content, totalPages: response.totalPages, totalElements: response.totalElements,
                 currentPage: response.number + 1, loading: false
-            }));
+            }))
+            .catch(err => console.log(err));
         console.log("LOADING", this.state.loading);
       
     }
 
     async filter() {
         console.log("LOADING", this.state.loading);
+        this.setState({loading:true});
        let currentPage = this.state.currentPage;
         currentPage -= 1;
         let url = 'http://localhost:8080/api/wydarzenia/filtered?name='+this.state.searchName+
@@ -73,12 +77,14 @@ class EventsMenu extends React.Component {
             headers: authHeader()
           };
         fetch(url, options)
-        .then(response => (response.status==200 ? response.json() : response.text()))
+        .then(response => (response.json()))
         .then((response) => this.setState({
                 posts: response.content, totalPages: response.totalPages, totalElements: response.totalElements,
-                currentPage: response.number + 1, loading: false
-            }));
+                currentPage: response.number + 1, loading: false,notFound:false
+            }))
+        .catch(() => this.setState({posts:[],notFound:true,loading:false}));
         console.log("LOADING", this.state.loading);
+   
       
     }
 
@@ -159,7 +165,7 @@ class EventsMenu extends React.Component {
         // const currentPosts = filteredIsFull.slice(indexOfFirstPost, indexOfLastPost);
         // console.log("Current posts", currentPosts);
 
-
+        console.log("Posts",posts)
         return (
             <div id="eventMenu" className="container bg-light border rounded border-dark">
                 <header>
@@ -172,6 +178,14 @@ class EventsMenu extends React.Component {
                                     notFullUpdate ={this.updateSearchNotFull} notFullState={this.state.searchNotFullChecked}
                                     clearSearch={this.clearSearch} filterEvents={this.filter}/>
                 </header>
+                {(this.state.notFound && !this.state.loading )&& (
+                    <div>
+                        <hr className="my-4"></hr>
+                    <div class="alert alert-danger" role="alert">
+                    Nie znaleziono żadnych wydarzeń
+                  </div>
+                  </div>
+                )}
                 {this.state.loading ? (
                     <div id="loading" className="text-center">
                         <span className="spinner-border spinner-border-lg"></span>
@@ -185,7 +199,7 @@ class EventsMenu extends React.Component {
                 
 
 
-                {(posts.length > 0) ?
+                {(posts.length > 0 && !this.state.loading) ?
                     <Card.Footer>
                         <div style={{ "float": "left" }}>
                             Showing Page {currentPage} of {totalPages}

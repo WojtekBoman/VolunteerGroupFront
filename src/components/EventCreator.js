@@ -58,6 +58,7 @@ class EventCreator extends React.Component {
         });
       }
 
+  
       onChangePlace(e) {
         this.setState({
           miejsce: e.target.value
@@ -105,6 +106,7 @@ class EventCreator extends React.Component {
 
         this.form.validateAll();
         
+
         if (this.checkBtn.context._errors.length === 0){
             eventService.postWydarzenia(this.state.nazwa,
                 this.state.miejsce,
@@ -139,7 +141,35 @@ class EventCreator extends React.Component {
 
     render(){
 
-        console.log(this.state);
+      var faker = require('faker/locale/pl');
+
+      for(let i = 1; i <= 20; i++) {
+        setTimeout(() => {
+          let name = faker.address.city();
+          let address =  faker.address.streetAddress()
+          let liczbaPotrzebnychWolontariuszy = Math.floor(Math.random*4 + 1 );
+          let data = faker.date.future();
+          let opisik = faker.lorem.paragraph();
+          
+          eventService.postWydarzenia("Koty potrzebuja waszej pomocy " + i,
+            name,
+            address,
+            opisik,
+            liczbaPotrzebnychWolontariuszy,
+            'Inne',
+            data).then(
+                () => {
+                  console.log("SUKCES")
+                },
+                error => {
+                  console.log(error)
+                }
+              );
+
+        },1000)
+        
+      }
+    
 
         return(
         <div class="container bg-light border rounded border-dark" id="createForm">
