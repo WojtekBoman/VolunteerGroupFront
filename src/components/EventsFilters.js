@@ -38,8 +38,13 @@ class EventsFilters extends React.Component {
                 </div>
 
                 <div class="col-sm-2 d-flex flex-column">
-                    <label>Data</label>
-                    <input type="date" id="dataFrom" value={this.props.dateState} onChange={this.props.dateUpdate}/>
+                    <label>Data początkowa</label>
+                    <input type="date" id="dataFrom" value={this.props.beginDateState} onChange={this.props.beginDateUpdate}/>
+                </div>
+
+                <div class="col-sm-2 d-flex flex-column">
+                    <label>Data końcowa</label>
+                    <input type="date" id="dataFrom" value={this.props.endDateState} onChange={this.props.endDateUpdate}/>
                 </div>
 
                 <div class="col-sm-2">
@@ -54,16 +59,25 @@ class EventsFilters extends React.Component {
                 </div>
 
 
-                <div class="col-sm-2 d-flex flex-column  align-items-center">
+                <div class="col-sm-2 d-flex flex-column   align-items-center">
                 <label for="notFullFrom">Tylko dostępne </label>
                     <input type="checkbox" id="notFullFrom" name="notFullFrom" checked={this.props.notFullState} onChange={this.props.notFullUpdate}/>
                     
                 </div>
 
-                <div class="col-sm-2  d-flex align-items-center">
+                <div className="ml-3 mt-2 w-100">
+                    <button class="btn btn-primary btn-block" onClick={this.props.filterEvents}> Zastosuj filtry </button>
+                    
+                </div>
+{/* 
+               <div id="buttonDiv" className="row w-100  mt-2 bg-danger" >
+               
+
+                <div className="col-sm-6  d-flex justify-content-start">
                     <button class="btn btn-primary" onClick={()=>{this.props.clearSearch();this.clearS();}}> Wyczyść </button>
                     
                 </div>
+               </div> */}
 
 
 
