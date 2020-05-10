@@ -101,11 +101,15 @@ class Navbar extends React.Component{
               )}  
 
               {showPracownikBoard && (
-                  <Link to={"/pra"} className="nav-link">
-                  <li className="nav-item">
-                    Ekran pracownika
-                    </li>
-                  </Link>
+                  <div className="navbar-nav">
+                  <li class="nav-item dropdown">
+                  <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Oferty</a>
+                  <div class="dropdown-menu">
+                        <Link to={"/oferty"} className="dropdown-item">Przeglądaj</Link>
+                        <Link to={"/nowaOferta"} className="dropdown-item">Dodaj</Link>
+                    </div>
+                  </li>
+                  </div>
               )}  
 
 

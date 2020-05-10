@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
@@ -141,34 +140,34 @@ class EventCreator extends React.Component {
 
     render(){
 
-      var faker = require('faker/locale/pl');
+      // var faker = require('faker/locale/pl');
 
-      for(let i = 1; i <= 20; i++) {
-        setTimeout(() => {
-          let name = faker.address.city();
-          let address =  faker.address.streetAddress()
-          let liczbaPotrzebnychWolontariuszy = Math.floor(Math.random*4 + 1 );
-          let data = faker.date.future();
-          let opisik = faker.lorem.paragraph();
+      // for(let i = 1; i <= 20; i++) {
+      //   setTimeout(() => {
+      //     let name = faker.address.city();
+      //     let address =  faker.address.streetAddress()
+      //     let liczbaPotrzebnychWolontariuszy = Math.floor(Math.random*4 + 1 );
+      //     let data = faker.date.future();
+      //     let opisik = faker.lorem.paragraph();
           
-          eventService.postWydarzenia("Koty potrzebuja waszej pomocy " + i,
-            name,
-            address,
-            opisik,
-            liczbaPotrzebnychWolontariuszy,
-            'Inne',
-            data).then(
-                () => {
-                  console.log("SUKCES")
-                },
-                error => {
-                  console.log(error)
-                }
-              );
+      //     eventService.postWydarzenia("Koty potrzebuja waszej pomocy " + i,
+      //       name,
+      //       address,
+      //       opisik,
+      //       liczbaPotrzebnychWolontariuszy,
+      //       'Inne',
+      //       data).then(
+      //           () => {
+      //             console.log("SUKCES")
+      //           },
+      //           error => {
+      //             console.log(error)
+      //           }
+      //         );
 
-        },1000)
+      //   },1000)
         
-      }
+      
     
 
         return(

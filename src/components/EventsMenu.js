@@ -45,7 +45,7 @@ class EventsMenu extends React.Component {
         console.log("LOADING", this.state.loading);
         this.setState({loading:true});
         currentPage -= 1;
-        let url = 'http://localhost:8080/api/wydarzenia/filtered?name&place&category&onlyAvailable&endDate&beginDate&size=' + this.state.postPerPage + '&page=' + currentPage;
+        let url = 'https://psipatrol.herokuapp.com/api/wydarzenia/filtered?name&place&category&onlyAvailable&endDate&beginDate&size=' + this.state.postPerPage + '&page=' + currentPage;
         let options = {
             method: 'GET',
             headers: authHeader()
@@ -65,7 +65,7 @@ class EventsMenu extends React.Component {
         this.setState({loading:true});
        let currentPage = this.state.currentPage;
         currentPage -= 1;
-        let url = 'http://localhost:8080/api/wydarzenia/filtered?name='+this.state.searchName+
+        let url = 'https://psipatrol.herokuapp.com/api/wydarzenia/filtered?name='+this.state.searchName+
                                                                         '&place='+this.state.searchPlace+
                                                                         '&category='+this.state.searchCategory+
                                                                         '&onlyAvailable='+this.state.searchNotFullChecked+

@@ -21,9 +21,12 @@ import Profile from './profile-info'
 import EventDetails from "./EventDetails"
 import UserEvents from "./UserEvents"
 import history from '../history'
+import OfferCreator from "./OfferCreator"
+import OfferMenu from "./OfferMenu"
 
 // IMPORT CSS
 import '../styles/app.css'
+
 
 class App extends React.Component {
 
@@ -45,6 +48,8 @@ class App extends React.Component {
                     <Route path="/noweWydarzenie" component={EventCreator}/>
                     <Route path="/userEvents" component={UserEvents} />
                     <Route path="/eventDetails/:id" component={EventDetails} />
+                    <Route path="/nowaOferta" component={OfferCreator}/>
+                    <Route path="/oferty" component={OfferMenu}/>
                 </Switch>
                 <Footer />
             </div>
