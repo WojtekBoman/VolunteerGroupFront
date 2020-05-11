@@ -26,7 +26,11 @@ Mozemy brac udzial tylko w wydarzeniach ktore maja jeszcze wolne miejsca
  ![image](https://user-images.githubusercontent.com/47774969/80964867-e07b8100-8e11-11ea-8c0d-a70e1d26db2f.png)
 ![image](https://user-images.githubusercontent.com/47774969/80964978-10c31f80-8e12-11ea-843a-9e46da5f3384.png)
 
+##Oferty
 
+![image](https://user-images.githubusercontent.com/47774969/81575048-dbd14280-93a6-11ea-9bf2-13c66c60480b.png)
+![image](https://user-images.githubusercontent.com/47774969/81575099-ec81b880-93a6-11ea-9d84-fe779da36c26.png)
+![image](https://user-images.githubusercontent.com/47774969/81575134-f7d4e400-93a6-11ea-8f4f-098eb1fda872.png)
 
 
  
