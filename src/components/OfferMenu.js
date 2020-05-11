@@ -1,5 +1,6 @@
 import React from 'react'
 import authHeader from '../services/auth-header'
+import OfferList from './OfferList'
 
 class OfferMenu extends React.Component {
 
@@ -7,6 +8,7 @@ class OfferMenu extends React.Component {
         super(props);
 
         this.state = {
+            loading: true,
             oferty:[]
         }
     }
@@ -21,7 +23,7 @@ class OfferMenu extends React.Component {
 
         fetch(url,options)
         .then(res => res.json())
-        .then(res => this.setState({oferty:res}));
+        .then(res => this.setState({oferty:res, loading:false}));
     }
 
     componentDidMount() {
@@ -41,6 +43,15 @@ class OfferMenu extends React.Component {
                     <h1>Aktualne oferty</h1>
                     <hr className="my-4" />
                 </header>
+
+                {this.state.loading ? (
+                    <div id="loading" className="text-center">
+                        <span className="spinner-border spinner-border-lg"></span>
+                        <br />
+                        <h4>Trwa pobieranie danych ...</h4>
+                        <br /> </div>)
+                 : (<div><OfferList offers={this.state.oferty} /></div>) }
+
             </div>
         )
     }
