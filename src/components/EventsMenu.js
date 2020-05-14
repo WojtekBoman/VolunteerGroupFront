@@ -218,7 +218,7 @@ class EventsMenu extends React.Component {
                                         </Button>
                                 </InputGroup.Prepend>
                                 <FormControl style={pageNumCss} className={"bg-light"} name="currentPage" value={currentPage}
-                                    onChange={this.changePage} />
+                                    onChange={this.changePage} readOnly="true" />
                                 <InputGroup.Append>
                                     <Button type="button" variant="outline-info" disabled={currentPage === totalPages ? true : false}
                                         onClick={this.nextPage}>

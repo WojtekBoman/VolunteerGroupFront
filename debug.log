@@ -16,3 +16,5 @@
 [0509/085716.329:ERROR:crash_report_database_win.cc(445)] failed to read records
 [0509/113521.558:ERROR:file_io.cc(89)] ReadExactly: expected 1288, observed 0
 [0509/113521.558:ERROR:crash_report_database_win.cc(445)] failed to read records
+[0514/124510.472:ERROR:file_io.cc(89)] ReadExactly: expected 1288, observed 0
+[0514/124510.472:ERROR:crash_report_database_win.cc(445)] failed to read records
