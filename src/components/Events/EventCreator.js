@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
-import eventService from "../services/event-service";
+import eventService from "../../services/event-service";
 
 const required = value => {
     if (!value) {
@@ -58,6 +57,7 @@ class EventCreator extends React.Component {
         });
       }
 
+  
       onChangePlace(e) {
         this.setState({
           miejsce: e.target.value
@@ -105,6 +105,7 @@ class EventCreator extends React.Component {
 
         this.form.validateAll();
         
+
         if (this.checkBtn.context._errors.length === 0){
             eventService.postWydarzenia(this.state.nazwa,
                 this.state.miejsce,
@@ -115,7 +116,7 @@ class EventCreator extends React.Component {
                 this.state.dataRozpoczecia).then(
                     () => {
                       this.props.history.push("/wydarzenia");
-                      window.location.reload();
+                      window.location.reload(false);
                     },
                     error => {
                       const resMessage =
@@ -139,7 +140,35 @@ class EventCreator extends React.Component {
 
     render(){
 
-        console.log(this.state);
+      // var faker = require('faker/locale/pl');
+
+      // for(let i = 1; i <= 50; i++) {
+      //   setTimeout(() => {
+      //     let name = faker.address.city();
+      //     let address =  faker.address.streetAddress()
+      //     let liczbaPotrzebnychWolontariuszy = 2;
+      //     let data = faker.date.future();
+      //     let opisik = faker.lorem.paragraph();
+          
+      //     eventService.postWydarzenia("Zwierzaki proszą o pomoc " + i,
+      //       name,
+      //       address,
+      //       opisik,
+      //       liczbaPotrzebnychWolontariuszy,
+      //       'Sprzatanie',
+      //       data).then(
+      //           () => {
+      //             console.log("SUKCES")
+      //           },
+      //           error => {
+      //             console.log(error)
+      //           }
+      //         );
+
+      //   },1000)
+        
+      // }
+    
 
         return(
         <div class="container bg-light border rounded border-dark" id="createForm">

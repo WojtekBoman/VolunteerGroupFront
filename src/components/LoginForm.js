@@ -58,7 +58,7 @@ class LoginForm extends React.Component {
           AuthService.login(this.state.email, this.state.haslo).then(
             () => {
               this.props.history.push("/profile");
-              window.location.reload();
+              window.location.reload(false);
             },
             error => {
               const resMessage =
