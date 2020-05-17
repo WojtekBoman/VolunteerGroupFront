@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import EventList from './EventList'
-import authHeader from '../services/auth-header'
+import authHeader from '../../services/auth-header'
 // import EventsPagination from './EventsPagination'
 // import {FontAwesomeIcon,faAngleRight,faAngleLeft,faAngleDoubleLeft, faAngleDoubleRight}  from '@fortawesome/react-fontawesome';
 // import { faList, faEdit, faTrash, faStepBackward, faFastBackward, faStepForward, faFastForward } from '@fortawesome/free-solid-svg-icons';
 import {Card, Table, Image, ButtonGroup, Button, InputGroup, FormControl} from 'react-bootstrap';
-import eventService from '../services/event-service'
-import '../styles/menu.css'
+import eventService from '../../services/event-service'
+import '../../styles/menu.css'
 import EventsFilters from './EventsFilters';
 
 class EventsMenu extends React.Component {

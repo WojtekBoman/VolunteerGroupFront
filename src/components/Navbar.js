@@ -70,11 +70,11 @@ class Navbar extends React.Component{
 
               {showWolontariuszBoard && (
                 <div className="navbar-nav">
-                  <Link to={"/wiadomosci"} className="nav-link">
+                  {/* <Link to={"/wiadomosci"} className="nav-link">
                   <li className="nav-item">
                     Wiadomości
                     </li>
-                  </Link>
+                  </Link> */}
                   <Link to={"/wydarzenia"} className="nav-link">
                   <li className="nav-item">
                     Wydarzenia
@@ -125,6 +125,13 @@ class Navbar extends React.Component{
 
             {currentUser ? (
               <div className="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                  <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Wiadomości</a>
+                  <div class="dropdown-menu">
+                        <Link to={"/wiadomosci"} className="dropdown-item">Skrzynka odbiorcza</Link>
+                        <Link to={"/nowaWiadomosc"} className="dropdown-item">Wyślij wiadomość</Link>
+                    </div>
+                  </li>
                 <Link to={"/userEvents"} className="nav-link">
                   <li className="nav-item">
                     Twoje wydarzenia

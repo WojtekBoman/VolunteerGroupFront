@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import EventList from './EventList'
 import EventsPagination from './EventsPagination'
-import eventService from '../services/event-service'
+import eventService from '../../services/event-service'
 
-import '../styles/menu.css'
+import '../../styles/menu.css'
 
 class EventsFilters extends React.Component {
 

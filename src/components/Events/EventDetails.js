@@ -1,8 +1,8 @@
 import React from 'react';
-import eventService from '../services/event-service';
-import participationService from '../services/participation-service';
-import authService from '../services/auth-service';
-import authHeader from '../services/auth-header';
+import eventService from '../../services/event-service';
+import participationService from '../../services/participation-service';
+import authService from '../../services/auth-service';
+import authHeader from '../../services/auth-header';
 import {
     BrowserRouter as Router,
     Switch,

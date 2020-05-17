@@ -1,6 +1,6 @@
 import React from 'react';
 import EventList from './EventList'
-import participationService from '../services/participation-service'
+import participationService from '../../services/participation-service'
 import EventsFilters from './EventsFilters';
 
 class UserEvents extends React.Component {
