@@ -46,7 +46,7 @@ class MessageDetail extends React.Component {
                   <br />
                   </div>)}
 
-                  {this.state.message && (
+                  {this.state.message && !this.state.loading && (
                       <div>
                     <header>
                         <h3>{this.state.message.temat}</h3>
