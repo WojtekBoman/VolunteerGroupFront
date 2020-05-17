@@ -142,20 +142,20 @@ class EventCreator extends React.Component {
 
       // var faker = require('faker/locale/pl');
 
-      // for(let i = 1; i <= 20; i++) {
+      // for(let i = 1; i <= 50; i++) {
       //   setTimeout(() => {
       //     let name = faker.address.city();
       //     let address =  faker.address.streetAddress()
-      //     let liczbaPotrzebnychWolontariuszy = Math.floor(Math.random*4 + 1 );
+      //     let liczbaPotrzebnychWolontariuszy = 2;
       //     let data = faker.date.future();
       //     let opisik = faker.lorem.paragraph();
           
-      //     eventService.postWydarzenia("Koty potrzebuja waszej pomocy " + i,
+      //     eventService.postWydarzenia("Zwierzaki proszą o pomoc " + i,
       //       name,
       //       address,
       //       opisik,
       //       liczbaPotrzebnychWolontariuszy,
-      //       'Inne',
+      //       'Sprzatanie',
       //       data).then(
       //           () => {
       //             console.log("SUKCES")
@@ -167,7 +167,7 @@ class EventCreator extends React.Component {
 
       //   },1000)
         
-      
+      // }
     
 
         return(

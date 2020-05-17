@@ -60,10 +60,9 @@ class EventsMenu extends React.Component {
       
     }
 
-    async filter() {
+    async filter(currentPage) {
         console.log("LOADING", this.state.loading);
         this.setState({loading:true});
-       let currentPage = this.state.currentPage;
         currentPage -= 1;
         let url = 'https://psipatrol.herokuapp.com/api/wydarzenia/filtered?name='+this.state.searchName+
                                                                         '&place='+this.state.searchPlace+
@@ -94,7 +93,7 @@ class EventsMenu extends React.Component {
 
     changePage = event => {
         let targetPage = parseInt(event.target.value);
-        this.receiveEvents(targetPage);
+        this.filter(targetPage);
         this.setState({
             [event.target.name]: targetPage
         });
@@ -103,27 +102,27 @@ class EventsMenu extends React.Component {
     firstPage = () => {
         let firstPage = 1;
         if (this.state.currentPage > firstPage) {
-            this.receiveEvents(firstPage);
+            this.filter(firstPage);
         }
     };
 
     prevPage = () => {
         let prevPage = 1;
         if (this.state.currentPage > prevPage) {
-            this.receiveEvents(this.state.currentPage - prevPage);
+            this.filter(this.state.currentPage - prevPage);
         }
     };
 
     lastPage = () => {
         let condition = Math.ceil(this.state.totalElements / this.state.postPerPage);
         if (this.state.currentPage < condition) {
-            this.receiveEvents(condition);
+            this.filter(condition);
         }
     };
 
     nextPage = () => {
         if (this.state.currentPage < Math.ceil(this.state.totalElements / this.state.postPerPage)) {
-            this.receiveEvents(this.state.currentPage + 1);
+            this.filter(this.state.currentPage + 1);
         }
     };
 
@@ -192,7 +191,7 @@ class EventsMenu extends React.Component {
                         <br />
                         <h4>Trwa pobieranie danych ...</h4>
                         <br /> </div>)
-                 : (<div> { (posts) ?<EventList events={posts} />: (<span>Brak wydarzeń</span>)} </div>) }
+                 : (<div> <EventList events={posts} /> </div>) }
                  {/* tu coś nie tego xd */}
                         {/* <EventsPagination postsPerPage={postPerPage} totalEvents={posts.length} paginate={this.paginate} /> */}
                     
@@ -219,7 +218,7 @@ class EventsMenu extends React.Component {
                                         </Button>
                                 </InputGroup.Prepend>
                                 <FormControl style={pageNumCss} className={"bg-light"} name="currentPage" value={currentPage}
-                                    onChange={this.changePage} />
+                                    onChange={this.changePage} readOnly="true" />
                                 <InputGroup.Append>
                                     <Button type="button" variant="outline-info" disabled={currentPage === totalPages ? true : false}
                                         onClick={this.nextPage}>
