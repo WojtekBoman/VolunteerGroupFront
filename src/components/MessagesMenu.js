@@ -58,7 +58,7 @@ class MessagesMenu extends React.Component {
                 <hr className="my-4" />
                     {this.state.messages ? 
                    (<div className="list-group">{this.state.messages.map((message => <Message key={message.idWiadomosci} 
-                    idWiadomosci={message.idWiadomosci} temat={message.temat} tresc={message.tresc} nadawca={message.emailNadawcy.email}/>))}</div>) 
+                    idWiadomosci={message.idWiadomosci} dataWyslania={message.dataWyslania} temat={message.temat} tresc={message.tresc} nadawca={message.emailNadawcy.email}/>))}</div>) 
                     :
                     (<div>Brak wiadomości</div>)   
                 }
@@ -69,7 +69,7 @@ class MessagesMenu extends React.Component {
                 </header>
                 <hr className="my-4" />
                     {this.state.messages ? 
-                   (<div className="list-group">{this.state.messages.map((message => <Message key={message.idWiadomosci} idWiadomosci={message.idWiadomosci} temat={message.temat} tresc={message.tresc} nadawca={message.emailNadawcy.email}/>))}</div>) 
+                   (<div className="list-group">{this.state.messages.map((message => <Message key={message.idWiadomosci} idWiadomosci={message.idWiadomosci} temat={message.temat} dataWyslania={message.dataWyslania} tresc={message.tresc} nadawca={message.emailAdresata.email}/>))}</div>) 
                     :
                     (<div>Brak wiadomości</div>)   
                 }
