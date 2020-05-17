@@ -24,6 +24,7 @@ import history from '../history'
 import OfferCreator from "./OfferCreator"
 import OfferMenu from "./OfferMenu"
 import MessageWriter from './MessageWriter'
+import MessageDetail from './MessageDetail'
 
 // IMPORT CSS
 import '../styles/app.css'
@@ -42,6 +43,7 @@ class App extends React.Component {
                     <Route path="/logowanie" component={LoginForm}/>
                     <Route path="/profile" component={Profile}/>
                     <Route path="/wiadomosci" component={MessagesMenu}/>
+                    <Route path="/wiadomosciSzczegoly/:id" component={MessageDetail}/>
                     <Route path="/nowaWiadomosc" component={MessageWriter}/>
                     <Route path="/wydarzenia" component={EventsMenu}/>
                     <Route path="/noweWydarzenie" component={EventCreator}/>
