@@ -1,5 +1,5 @@
 #eventMenu {
-    margin: 200px auto;
+    margin: 230px auto;
     padding: 50px;
 
 }
@@ -10,12 +10,19 @@
 
 }
 
-/* .scrollMenu {
-    height: 400px;
-    overflow-y: scroll;
-} */
-
-
 #loading {
     margin: 150px auto;
+}
+
+#miniloading {
+    margin: 5px auto;
+}
+
+#messageMenu {
+    margin: 200px auto;
+    padding: 50px;
+}
+
+#messageMenu header{
+    margin-top: 25px;
 }

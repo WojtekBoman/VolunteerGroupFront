@@ -1,22 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-class Message extends React.Component {
+const Message = (props) => {
     
-    render() {
         return(
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <Link to={`/wiadomosciSzczegoly/${props.idWiadomosci}`} class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Dziękujemy za udział w zbiórce !</h5>
+              <h5 class="mb-1">{props.temat}</h5>
               <small class="text-muted">3 dni temu</small>
             </div>
-            <p class="mb-1">Dzięki twojej pomocy psy ze schroniska na krzykach otrzymały zapas karmy na pół roku.</p>
-            <small class="text-muted">Przewodniczący</small>
-          </a>
+        <p class="mb-1">{props.tresc}</p>
+            <small class="text-muted">{props.nadawca}</small>
+          </Link>
         )
 
         
     }
-}
+
 
 export default Message;

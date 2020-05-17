@@ -5,8 +5,10 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useHistory
   } from "react-router-dom";
+  import history from '../history';
 
 class Navbar extends React.Component{
 
@@ -37,7 +39,9 @@ class Navbar extends React.Component{
     }
 
     logout(){
+       
         AuthService.logout();
+        history.push('/logowanie')
     }
 
     render(){
@@ -66,11 +70,11 @@ class Navbar extends React.Component{
 
               {showWolontariuszBoard && (
                 <div className="navbar-nav">
-                  <Link to={"/wiadomosci"} className="nav-link">
+                  {/* <Link to={"/wiadomosci"} className="nav-link">
                   <li className="nav-item">
                     Wiadomości
                     </li>
-                  </Link>
+                  </Link> */}
                   <Link to={"/wydarzenia"} className="nav-link">
                   <li className="nav-item">
                     Wydarzenia
@@ -97,11 +101,15 @@ class Navbar extends React.Component{
               )}  
 
               {showPracownikBoard && (
-                  <Link to={"/pra"} className="nav-link">
-                  <li className="nav-item">
-                    Ekran pracownika
-                    </li>
-                  </Link>
+                  <div className="navbar-nav">
+                  <li class="nav-item dropdown">
+                  <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Oferty</a>
+                  <div class="dropdown-menu">
+                        <Link to={"/oferty"} className="dropdown-item">Przeglądaj</Link>
+                        <Link to={"/nowaOferta"} className="dropdown-item">Dodaj</Link>
+                    </div>
+                  </li>
+                  </div>
               )}  
 
 
@@ -117,14 +125,28 @@ class Navbar extends React.Component{
 
             {currentUser ? (
               <div className="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                  <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Wiadomości</a>
+                  <div class="dropdown-menu">
+                        <Link to={"/wiadomosci"} className="dropdown-item">Skrzynka odbiorcza</Link>
+                        <Link to={"/nowaWiadomosc"} className="dropdown-item">Wyślij wiadomość</Link>
+                    </div>
+                  </li>
+                <Link to={"/userEvents"} className="nav-link">
+                  <li className="nav-item">
+                    Twoje wydarzenia
+                    </li>
+                  </Link>
                   <Link to={"/profile"} className="nav-link">
                   <li className="nav-item">
                     {currentUser.email}
                     </li>
                   </Link>
                     <li class="nav-item" onClick={this.logout}>
-                        <a class="nav-link" href="/VolunteerGroup_Front/logowanie">Wyloguj</a>
+                        <a class="nav-link" href="">Wyloguj</a>
                     </li>
+                    
+                    
               </div>
             ) : (
                 <div class="collapse navbar-collapse" id="navbarResponsive">
