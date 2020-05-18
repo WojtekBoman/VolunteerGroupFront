@@ -32,8 +32,17 @@ Mozemy brac udzial tylko w wydarzeniach ktore maja jeszcze wolne miejsca
 ![image](https://user-images.githubusercontent.com/47774969/81575099-ec81b880-93a6-11ea-9d84-fe779da36c26.png)
 ![image](https://user-images.githubusercontent.com/47774969/81575134-f7d4e400-93a6-11ea-8f4f-098eb1fda872.png)
 
+<h2>Wiadomości</h2>
 
- 
+![image](https://user-images.githubusercontent.com/47774969/82213995-581ed500-9915-11ea-8159-b4e3178cb37d.png)
+
+![image](https://user-images.githubusercontent.com/47774969/82214031-6d93ff00-9915-11ea-8f4e-c136466f4c92.png)
+
+![image](https://user-images.githubusercontent.com/47774969/82214078-81d7fc00-9915-11ea-9b3d-3e887915cade.png)
+
+![image](https://user-images.githubusercontent.com/47774969/82214117-961bf900-9915-11ea-9432-79cd748dcb87.png)
+
+
  
 
 
