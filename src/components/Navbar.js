@@ -75,6 +75,11 @@ class Navbar extends React.Component{
                     Wiadomości
                     </li>
                   </Link> */}
+                  <Link to={"/zbiorki"} className="nav-link">
+                  <li className="nav-item">
+                    Zbiórki
+                    </li>
+                  </Link>
                   <Link to={"/wydarzenia"} className="nav-link">
                   <li className="nav-item">
                     Wydarzenia
@@ -109,6 +114,15 @@ class Navbar extends React.Component{
                         <Link to={"/nowaOferta"} className="dropdown-item">Dodaj</Link>
                     </div>
                   </li>
+
+                  <li class="nav-item dropdown">
+                  <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Zbiórki</a>
+                  <div class="dropdown-menu">
+                        <Link to={"/zbiorki"} className="dropdown-item">Przeglądaj</Link>
+                        <Link to={"/nowaZbiorka"} className="dropdown-item">Dodaj</Link>
+                    </div>
+                  </li>
+
                   </div>
               )}  
 

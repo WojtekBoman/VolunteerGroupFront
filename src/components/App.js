@@ -25,9 +25,13 @@ import OfferCreator from "./OfferCreator"
 import OfferMenu from "./OfferMenu"
 import MessageWriter from './MessageWriter'
 import MessageDetail from './MessageDetail'
+import CollectionMenu from './CollectionMenu';
+import CollectionCreator from './CollectionCreator';
 
 // IMPORT CSS
 import '../styles/app.css'
+
+
 
 
 class App extends React.Component {
@@ -44,6 +48,8 @@ class App extends React.Component {
                     <Route path="/profile" component={Profile}/>
                     <Route path="/wiadomosci" component={MessagesMenu}/>
                     <Route path="/wiadomosciSzczegoly/:id" component={MessageDetail}/>
+                    <Route path="/zbiorki" component={CollectionMenu} />
+                    <Route path="/nowaZbiorka" component={CollectionCreator} />
                     <Route path="/nowaWiadomosc" component={MessageWriter}/>
                     <Route path="/wydarzenia" component={EventsMenu}/>
                     <Route path="/noweWydarzenie" component={EventCreator}/>
