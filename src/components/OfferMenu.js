@@ -62,7 +62,7 @@ class OfferMenu extends React.Component {
     firstPage = () => {
         let firstPage = 1;
         if (this.state.currentPage > firstPage) {
-            this.filtgetOfferser(firstPage);
+            this.getOffers(firstPage);
         }
     };
 
