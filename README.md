@@ -43,8 +43,11 @@ Mozemy brac udzial tylko w wydarzeniach ktore maja jeszcze wolne miejsca
 ![image](https://user-images.githubusercontent.com/47774969/82214117-961bf900-9915-11ea-9432-79cd748dcb87.png)
 
 <h2>Zbiórki</h2>
+
 ![image](https://user-images.githubusercontent.com/47774969/82821380-4ce32080-9ea4-11ea-9457-503d7fb33c7d.png)
+
 ![image](https://user-images.githubusercontent.com/47774969/82821411-5cfb0000-9ea4-11ea-98c0-302946b79bdb.png)
+
 
 
  
