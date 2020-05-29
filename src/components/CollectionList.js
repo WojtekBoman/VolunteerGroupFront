@@ -8,7 +8,7 @@ const CollectionList = (props) => {
        return(
        <div>
            {props.zbiorki.map(zbiorka => {
-               return <Collection key={zbiorka.idZbiorki} tytul={zbiorka.tytul} opis={zbiorka.opis} 
+               return <Collection key={zbiorka.idZbiorki} idZbiorki={zbiorka.idZbiorki} tytul={zbiorka.tytul} opis={zbiorka.opis} 
                kwotaPotrzebna={zbiorka.kwotaPotrzebna} kwotaZebrana={zbiorka.kwotaZebrana} pracownik={zbiorka.idPracownika.email}
                dataRozpoczecia={zbiorka.dataRozpoczecia} dataZakonczenia={zbiorka.dataZakonczenia} />
            })}
