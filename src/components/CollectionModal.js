@@ -33,7 +33,7 @@ class CollectionModal extends React.Component {
 
   transferMoney(amount, id) {
     this.setState({submitLoading:true,transfered: true})
-    let url = 'http://localhost:8080/api/zbiorki/wplac?id='+id+'&kwota='+amount;
+    let url = 'https://psipatrol.herokuapp.com/api/zbiorki/wplac?id='+id+'&kwota='+amount;
     let options = {
         method: 'POST',
         headers : authHeader()
