@@ -146,6 +146,13 @@ class Navbar extends React.Component{
                         <Link to={"/nowaWiadomosc"} className="dropdown-item">Wyślij wiadomość</Link>
                     </div>
                   </li>
+                  <li class="nav-item dropdown">
+                  <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Statystyki</a>
+                  <div class="dropdown-menu">
+                        <Link to={"/wykresAktywnosci"} className="dropdown-item">Aktywność</Link>
+                        <Link to={"/wykresWydarzen"} className="dropdown-item">Zbiórki</Link>
+                    </div>
+                  </li>
                 <Link to={"/userEvents"} className="nav-link">
                   <li className="nav-item">
                     Twoje wydarzenia
