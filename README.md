@@ -52,6 +52,7 @@ Mozemy brac udzial tylko w wydarzeniach ktore maja jeszcze wolne miejsca
 ![image](https://user-images.githubusercontent.com/47774969/83401136-74863b80-a404-11ea-801a-26ed44aad4f3.png)
 
 <h2>Wykres liczby wydarzeń/zbiórek w danym roku</h2>
+![image](https://user-images.githubusercontent.com/47774969/83402209-97195400-a406-11ea-84f0-cef4491f647b.png)
 ![image](https://user-images.githubusercontent.com/47774969/83401443-1148d900-a405-11ea-8df7-89fedc174492.png)
 
  
