@@ -26,3 +26,8 @@
 #messageMenu header{
     margin-top: 25px;
 }
+
+#collectionMenu {
+    margin: 150px auto;
+    padding: 40px;
+}

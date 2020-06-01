@@ -1,21 +1,19 @@
 import React from 'react'
 import authHeader from '../services/auth-header'
-import OfferList from './OfferList'
-import OfferFilters from './OfferFilters';
+import CollectionList from './CollectionList'
+import CollectionFilters from './CollectionFilters';
 import {Card, Table, Image, ButtonGroup, Button, InputGroup, FormControl} from 'react-bootstrap';
 
-class OfferMenu extends React.Component {
+class CollectionMenu extends React.Component {
 
     constructor(props) {
         super(props);
         this.updateSearchTitle = this.updateSearchTitle.bind(this);
-        this.updateSearchName = this.updateSearchName.bind(this);
-        this.getOffers = this.getOffers.bind(this);
-
+        this.getCollections = this.getCollections.bind(this);
+        
         this.state = {
             loading: true,
-            oferty: [],
-            searchName: '',
+            collections:[],
             searchTitle: '',
             postPerPage: 2,
             currentPage: 1,
@@ -23,12 +21,18 @@ class OfferMenu extends React.Component {
         }
     }
 
-    async getOffers(currentPage) {
+    async componentDidMount() {
+
+    this.getCollections(this.state.currentPage);
+
+    }
+
+    async getCollections(currentPage){
         console.log("LOADING", this.state.loading);
         this.setState({ loading: true });
         currentPage -= 1;
 
-        let url = 'https://psipatrol.herokuapp.com/api/oferty/filtered?title=' + this.state.searchTitle + '&name=' + this.state.searchName + '&page=' + currentPage + '&size=' + this.state.postPerPage;
+        let url = 'https://psipatrol.herokuapp.com/api/zbiorki/filtered?title=' + this.state.searchTitle +'&page=' + currentPage + '&size=' + this.state.postPerPage;
         let options = {
             method: 'GET',
             headers: authHeader()
@@ -37,23 +41,18 @@ class OfferMenu extends React.Component {
         fetch(url, options)
             .then(response => (response.json()))
             .then((response) => this.setState({
-                oferty: response.content, totalPages: response.totalPages, totalElements: response.totalElements,
+                collections: response.content, totalPages: response.totalPages, totalElements: response.totalElements,
                 currentPage: response.number + 1, loading: false, notFound: false
             }))
-            .catch(() => this.setState({ oferty: [], notFound: true, loading: false }));
+            .catch(() => this.setState({ collections: [], notFound: true, loading: false }));
         console.log("LOADING", this.state.loading);
     }
 
-    componentDidMount() {
-        this.getOffers(this.state.currentPage);
-    }
-
-    updateSearchName(event) { this.setState({ searchName: event.target.value.substr(0, 20) }); }
     updateSearchTitle(event) { this.setState({ searchTitle: event.target.value.substr(0, 20) }); }
 
     changePage = event => {
         let targetPage = parseInt(event.target.value);
-        this.getOffers(targetPage);
+        this.getCollections(targetPage);
         this.setState({
             [event.target.name]: targetPage
         });
@@ -62,33 +61,32 @@ class OfferMenu extends React.Component {
     firstPage = () => {
         let firstPage = 1;
         if (this.state.currentPage > firstPage) {
-            this.getOffers(firstPage);
+            this.getCollections(firstPage);
         }
     };
 
     prevPage = () => {
         let prevPage = 1;
         if (this.state.currentPage > prevPage) {
-            this.getOffers(this.state.currentPage - prevPage);
+            this.getCollections(this.state.currentPage - prevPage);
         }
     };
 
     lastPage = () => {
         let condition = Math.ceil(this.state.totalElements / this.state.postPerPage);
         if (this.state.currentPage < condition) {
-            this.getOffers(condition);
+            this.getCollections(condition);
         }
     };
 
     nextPage = () => {
         if (this.state.currentPage < Math.ceil(this.state.totalElements / this.state.postPerPage)) {
-            this.getOffers(this.state.currentPage + 1);
+            this.getCollections(this.state.currentPage + 1);
         }
     };
 
     render() {
-        const { oferty, currentPage, totalPages } = this.state;
-        console.log('Oferty', oferty);
+        const {collections, currentPage, totalPages } = this.state;
         const pageNumCss = {
             width: "45px",
             border: "1px solid #17A2B8",
@@ -96,24 +94,19 @@ class OfferMenu extends React.Component {
             textAlign: "center",
             fontWeight: "bold"
         };
-
         return (
-            <div id="eventMenu" className="container bg-light border rounded border-dark">
+            <div id="collectionMenu" className="container bg-light border rounded border-dark">
                 <header>
-                    <h1>Aktualne oferty</h1>
-                    <hr className="my-4" />
-                    <OfferFilters nameUpdate={this.updateSearchName} nameState={this.state.searchName}
-                        titleUpdate={this.updateSearchTitle} titleState={this.state.searchTitle}
-                        filterOffers={this.getOffers} />
-
-
+                    <h1>Zbiórki</h1>
+                    <hr className="my-4"></hr>  
+                    <CollectionFilters titleUpdate={this.updateSearchTitle} titleState={this.state.searchTitle}
+                        filterCollections={this.getCollections} />
                 </header>
-
                 {(this.state.notFound && !this.state.loading) && (
                     <div>
                         <hr className="my-4"></hr>
                         <div class="alert alert-danger" role="alert">
-                            Nie znaleziono żadnych ofert
+                            Nie znaleziono żadnych zbórek
                   </div>
                     </div>
                 )}
@@ -123,9 +116,9 @@ class OfferMenu extends React.Component {
                         <br />
                         <h4>Trwa pobieranie danych ...</h4>
                         <br /> </div>)
-                    : (<div> <OfferList offers={oferty} /> </div>)}
+                    : (<div> <CollectionList zbiorki={collections} /> </div>)}
 
-                {(oferty.length > 0 && !this.state.loading) ?
+                {(collections.length > 0 && !this.state.loading) ?
                     <Card.Footer>
                         <div style={{ "float": "left" }}>
                             Showing Page {currentPage} of {totalPages}
@@ -162,11 +155,9 @@ class OfferMenu extends React.Component {
                         </div>
                     </Card.Footer> : null
                 }
-
             </div>
         )
     }
-
 }
 
-export default OfferMenu;
+export default CollectionMenu;

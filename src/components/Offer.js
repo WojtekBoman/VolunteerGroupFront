@@ -4,9 +4,6 @@ import {BrowserRouter as Router,Link} from "react-router-dom";
 
 const Offer = (props) => {
 
-
-        
-
         return(
             <div class="jumbotron">
                     <h1 className="display-4">{props.tytul}</h1>
