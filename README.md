@@ -48,6 +48,7 @@ Mozemy brac udzial tylko w wydarzeniach ktore maja jeszcze wolne miejsca
 
 ![image](https://user-images.githubusercontent.com/47774969/82821411-5cfb0000-9ea4-11ea-98c0-302946b79bdb.png)
 
+
 <h2>Wykres aktywności</h2>
 ![image](https://user-images.githubusercontent.com/47774969/83401136-74863b80-a404-11ea-801a-26ed44aad4f3.png)
 
