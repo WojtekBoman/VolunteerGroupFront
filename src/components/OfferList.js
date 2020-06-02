@@ -9,7 +9,7 @@ const OfferList = (props) => {
         return (<div className="scrollMenu">
             {props.offers.map(offer => {
                 return <Offer key={offer.idOferty} data_key={offer.idOferty} tytul={offer.tytul} imie={offer.imie} 
-                opis={offer.opis}/>
+                opis={offer.opis} zdjecie={offer.zdjecie}/>
             })}
         </div>);
     }
