@@ -100,6 +100,11 @@ class Navbar extends React.Component{
                     Ekran przewodniczącego
                     </li>
                   </Link> */}
+                  <Link to={"/tworzenieNewsa"} className="nav-link">
+                  <li className="nav-item">
+                    Dodaj news
+                    </li>
+                  </Link>
                   <li class="nav-item dropdown">
                   <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Wydarzenia</a>
                   <div class="dropdown-menu">

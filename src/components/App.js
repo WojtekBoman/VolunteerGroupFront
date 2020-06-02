@@ -29,6 +29,7 @@ import CollectionMenu from './CollectionMenu';
 import CollectionCreator from './CollectionCreator';
 import EventChart from './EventChart';
 import ActivityChart from './ActivityChart';
+import NewsCreator from './NewsCreator'
 
 // IMPORT CSS
 import '../styles/app.css'
@@ -62,6 +63,7 @@ class App extends React.Component {
                     <Route path="/oferty" component={OfferMenu}/>
                     <Route path="/wykresWydarzen" component={EventChart} />
                     <Route path="/wykresAktywnosci" component={ActivityChart} />
+                    <Route path="/tworzenieNewsa" component={NewsCreator}/>
                 </Switch>
                 <Footer />
             </div>
