@@ -26,11 +26,13 @@ const required = value => {
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onChangePetName = this.onChangePetName.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
+        this.onChangeFoto = this.onChangeFoto.bind(this);
 
         this.state = {
             tytul:'',
             imie:'',
             opis:'',
+            zdjecie:'',
             loading: false,
             message: ''
         }
@@ -54,6 +56,12 @@ const required = value => {
         });
       }
 
+      onChangeFoto(e) {
+        this.setState({
+          zdjecie: e.target.value
+        });
+      }
+
       handleOffer(e) {
         e.preventDefault();
 
@@ -68,15 +76,15 @@ const required = value => {
 
         if (this.checkBtn.context._errors.length === 0){
             
-            const {tytul,opis,imie} = this.state;
-            const data = {tytul,opis,imie};
-            console.log(JSON.stringify({tytul,opis,imie}));
+            const {tytul,opis,imie,zdjecie} = this.state;
+            const data = {tytul,opis,imie,zdjecie};
+            console.log(JSON.stringify({tytul,opis,imie,zdjecie}));
 
             let url = 'https://psipatrol.herokuapp.com/api/oferty';
             let options = {
             method: 'POST',
             headers: authHeader(),
-            body: JSON.stringify({tytul,opis,imie})
+            body: JSON.stringify({tytul,opis,imie,zdjecie})
           };
 
 
@@ -123,6 +131,11 @@ const required = value => {
             <div class="form-group">
             <label for="exampleInputPetName">Imię zwierzaka</label>
             <Input value={this.state.imie} validations={[required]} onChange={this.onChangePetName} type="text" className="form-control" id="examplePetName" placeholder="Wprowadź imię zwierzaka" validations={[required]}/>
+            </div>
+
+            <div class="form-group">
+            <label for="exampleInputPetName">Zdjęcie</label>
+            <Input value={this.state.zdjecie} validations={[required]} onChange={this.onChangeFoto} type="text" className="form-control" id="exampleFoto" placeholder="Podaj link do zdjęcia" validations={[required]}/>
             </div>
             
             <div class="form-group">
