@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/VolunteerGroup_Front/static/css/main.6bc82697.chunk.css",
-    "main.js": "/VolunteerGroup_Front/static/js/main.20513f89.chunk.js",
-    "main.js.map": "/VolunteerGroup_Front/static/js/main.20513f89.chunk.js.map",
+    "main.css": "/VolunteerGroup_Front/static/css/main.603f403a.chunk.css",
+    "main.js": "/VolunteerGroup_Front/static/js/main.c588a833.chunk.js",
+    "main.js.map": "/VolunteerGroup_Front/static/js/main.c588a833.chunk.js.map",
     "runtime-main.js": "/VolunteerGroup_Front/static/js/runtime-main.93e997b8.js",
     "runtime-main.js.map": "/VolunteerGroup_Front/static/js/runtime-main.93e997b8.js.map",
     "static/css/2.de424728.chunk.css": "/VolunteerGroup_Front/static/css/2.de424728.chunk.css",
-    "static/js/2.7f0cc582.chunk.js": "/VolunteerGroup_Front/static/js/2.7f0cc582.chunk.js",
-    "static/js/2.7f0cc582.chunk.js.map": "/VolunteerGroup_Front/static/js/2.7f0cc582.chunk.js.map",
+    "static/js/2.58949284.chunk.js": "/VolunteerGroup_Front/static/js/2.58949284.chunk.js",
+    "static/js/2.58949284.chunk.js.map": "/VolunteerGroup_Front/static/js/2.58949284.chunk.js.map",
     "index.html": "/VolunteerGroup_Front/index.html",
-    "precache-manifest.76567c0b7db4fa05fe0a3aa914228d37.js": "/VolunteerGroup_Front/precache-manifest.76567c0b7db4fa05fe0a3aa914228d37.js",
+    "precache-manifest.0e7e18120f58a21c80fd6f3a9781299f.js": "/VolunteerGroup_Front/precache-manifest.0e7e18120f58a21c80fd6f3a9781299f.js",
     "service-worker.js": "/VolunteerGroup_Front/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/VolunteerGroup_Front/static/css/2.de424728.chunk.css.map",
-    "static/css/main.6bc82697.chunk.css.map": "/VolunteerGroup_Front/static/css/main.6bc82697.chunk.css.map",
-    "static/js/2.7f0cc582.chunk.js.LICENSE.txt": "/VolunteerGroup_Front/static/js/2.7f0cc582.chunk.js.LICENSE.txt",
+    "static/css/main.603f403a.chunk.css.map": "/VolunteerGroup_Front/static/css/main.603f403a.chunk.css.map",
+    "static/js/2.58949284.chunk.js.LICENSE.txt": "/VolunteerGroup_Front/static/js/2.58949284.chunk.js.LICENSE.txt",
     "static/media/background1.jpg": "/VolunteerGroup_Front/static/media/background1.de3a50ff.jpg",
     "static/media/background2.jpg": "/VolunteerGroup_Front/static/media/background2.303269b8.jpg",
     "static/media/background3.jpg": "/VolunteerGroup_Front/static/media/background3.9d42dd43.jpg"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.93e997b8.js",
     "static/css/2.de424728.chunk.css",
-    "static/js/2.7f0cc582.chunk.js",
-    "static/css/main.6bc82697.chunk.css",
-    "static/js/main.20513f89.chunk.js"
+    "static/js/2.58949284.chunk.js",
+    "static/css/main.603f403a.chunk.css",
+    "static/js/main.c588a833.chunk.js"
   ]
 }
