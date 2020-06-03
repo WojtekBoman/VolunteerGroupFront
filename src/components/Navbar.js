@@ -197,6 +197,15 @@ class Navbar extends React.Component{
             </div>
 
             )}
+
+            <div className="navbar-nav">
+            <Link to="/encyklopedia">
+            <li class="nav-item">
+                        <a class="nav-link" href="#">Encyklopedia</a>
+                    </li>
+            </Link>
+            </div>
+
             </div>
         </nav>
         )

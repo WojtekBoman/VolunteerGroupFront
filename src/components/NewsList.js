@@ -19,8 +19,7 @@ class NewsList extends React.Component {
 
         let url = 'https://psipatrol.herokuapp.com/api/newsy';
         let options = {
-            method: 'GET',
-            headers: authHeader()
+            method: 'GET'
         }
 
         fetch(url,options).then(res => 

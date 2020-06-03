@@ -30,6 +30,7 @@ import CollectionCreator from './CollectionCreator';
 import EventChart from './EventChart';
 import ActivityChart from './ActivityChart';
 import NewsCreator from './NewsCreator'
+import DogEncyclopedia from './DogEncyclopedia'
 
 // IMPORT CSS
 import '../styles/app.css'
@@ -39,6 +40,7 @@ import '../styles/chart.css'
 
 
 class App extends React.Component {
+    
 
     render() {
         return (
@@ -64,6 +66,7 @@ class App extends React.Component {
                     <Route path="/wykresWydarzen" component={EventChart} />
                     <Route path="/wykresAktywnosci" component={ActivityChart} />
                     <Route path="/tworzenieNewsa" component={NewsCreator}/>
+                    <Route path="/encyklopedia" component={DogEncyclopedia} />
                 </Switch>
                 <Footer />
             </div>
