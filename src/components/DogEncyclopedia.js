@@ -17,8 +17,22 @@ class DogEncyclopedia extends React.Component {
             foundDog:"",
             breedOfDog:"",
             message:"",
-            displaySecondWindow:false
+            displaySecondWindow:false,
+            dogs:null
         }
+    }
+
+    componentDidMount() {
+        this.setState({loading:true})
+
+        let url = 'https://dog.ceo/api/breeds/list/all';
+        let options = {
+            method: 'GET'
+          };
+
+        
+          fetch(url,options).then(res => res.json()).then(res => this.setState({dogs:res,loading:false}));
+
     }
 
     onChangeBreedOfDog(e) {
@@ -63,10 +77,20 @@ class DogEncyclopedia extends React.Component {
         return(
             <div>
             <div className="container bg-light border rounded border-dark" id="encyclopedyForm">
+            {!this.state.dogs ? (
+                  <span className="spinner-border spinner-border-sm"></span>
+                ) :
+                (
+                    <div>
                 <Form onSubmit={this.handleDogPicture}>
                 <div class="form-group">
                 <label for="exampleInputBreedOfDog">Rasa psa</label>
-                <Input type="text" className="form-control" value={this.state.breedOfDog} onChange={this.onChangeBreedOfDog}  id="exampleInputBreedOfDog" placeholder="Podaj rasę do wyszukania"/>
+                <Input type="text" list="dogs" className="form-control" value={this.state.breedOfDog} onChange={this.onChangeBreedOfDog}  id="exampleInputBreedOfDog" placeholder="Podaj rasę do wyszukania"/>
+                <datalist id="dogs">
+                    {Object.keys(this.state.dogs.message).map((item,key) =>
+                    <option key={key} value={item} />
+                    )}
+                </datalist>
                 </div>
                 <button id="searchButton"
                 className="btn btn-block btn-dark"
@@ -78,6 +102,9 @@ class DogEncyclopedia extends React.Component {
                 <span>Szukaj</span>
               </button>
                 </Form>
+                </div>
+                )
+                }
                 </div>
 
                 {this.state.displaySecondWindow && (
