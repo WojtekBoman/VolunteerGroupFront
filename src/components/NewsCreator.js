@@ -107,11 +107,11 @@ class NewsCreator extends React.Component {
                 <Form onSubmit={this.handleNews} ref={c => this.form = c}>
             <div class="form-group">
             <label for="exampleInputEventTitle">Tytuł newsa</label>
-            <Input value={this.state.naglowek} validations={[required]} onChange={this.onChangeTitle} type="text" className="form-control" id="exampleInputEventTitle" placeholder="Wprowadź nazwę oferty" validations={[required]}/>
+            <Input value={this.state.naglowek} validations={[required]} onChange={this.onChangeTitle} type="text" className="form-control" id="exampleInputEventTitle" placeholder="Wprowadź tytuł newsa" validations={[required]}/>
             </div>
             
             <div class="form-group">
-                <label for="exampleFormOfferDescription">Opis oferty</label>
+                <label for="exampleFormOfferDescription">Treść newsa</label>
                 <textarea required value={this.state.opis} validations={[required]} onChange={this.onChangeDescription} class="form-control" id="exampleFormOfferDescription" rows="3"></textarea>
             </div>
         
