@@ -101,7 +101,7 @@ class NewsCreator extends React.Component {
         return (
             <div class="container bg-light border rounded border-dark" id="createForm">
                 <header>
-                    <h2>Utwórz nową ofertę</h2>
+                    <h2>Utwórz nowego newsa</h2>
                     <hr className="my-4"/>
                 </header>
                 <Form onSubmit={this.handleNews} ref={c => this.form = c}>
