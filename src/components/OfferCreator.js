@@ -145,7 +145,7 @@ const required = value => {
         
 
         <div className="form-group">
-              <button
+              <button id="addOfferButton"
                 className="btn btn-block btn-dark"
                 disabled={this.state.loading}
               >

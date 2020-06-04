@@ -61,7 +61,7 @@ class DogEncyclopedia extends React.Component {
                 <label for="exampleInputBreedOfDog">Rasa psa</label>
                 <Input type="text" className="form-control" value={this.state.breedOfDog} onChange={this.onChangeBreedOfDog}  id="exampleInputBreedOfDog" placeholder="Podaj rasę do wyszukania"/>
                 </div>
-                <button
+                <button id="searchButton"
                 className="btn btn-block btn-dark"
                 disabled={this.state.loading}
               >

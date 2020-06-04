@@ -100,7 +100,7 @@ class LoginForm extends React.Component {
         <Input type="password" value={this.state.haslo} onChange={this.onChangePassword} validations={[required]} className="form-control" id="exampleInputhaslo1" placeholder="Podaj swoje hasło"/>
     </div>
     <div className="form-group">
-              <button
+              <button id="loginButton"
                 className="btn btn-block btn-dark"
                 disabled={this.state.loading}
               >
