@@ -117,7 +117,7 @@ class NewsCreator extends React.Component {
         
 
         <div className="form-group">
-              <button
+              <button id="addNewsButton"
                 className="btn btn-block btn-dark"
                 disabled={this.state.loading}
               >
