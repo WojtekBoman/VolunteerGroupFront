@@ -30,9 +30,16 @@ class DogEncyclopedia extends React.Component {
 
         this.setState({loading:true,displaySecondWindow:true})
 
-        const {breedOfDog} = this.state;
+        let {breedOfDog} = this.state;
 
-        let url = `https://dog.ceo/api/breed/${breedOfDog.toLowerCase().trim()}/images/random`;
+        const foundDog = breedOfDog;
+
+        breedOfDog = breedOfDog.toLowerCase();
+        breedOfDog = breedOfDog.replace(/\s/g, '');
+
+        console.log("Rasa",breedOfDog)
+
+        let url = `https://dog.ceo/api/breed/${breedOfDog}/images/random`;
         let options = {
             method: 'GET'
           };
@@ -43,7 +50,7 @@ class DogEncyclopedia extends React.Component {
             )
         .then(res => {
             if(res.code != 404) {
-                this.setState({dogPhoto:res.message,loading:false,foundDog:breedOfDog,message:''});
+                this.setState({dogPhoto:res.message,loading:false,foundDog,message:''});
             }else {
                 this.setState({message:"Nie znaleziono psa o podanej rasie :(",loading:false,dogPhoto:null,foundDog:null});
             }
