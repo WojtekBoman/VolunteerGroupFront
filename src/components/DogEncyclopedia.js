@@ -43,7 +43,7 @@ class DogEncyclopedia extends React.Component {
             )
         .then(res => {
             if(res.code != 404) {
-                this.setState({dogPhoto:res.message,loading:false,foundDog:breedOfDog});
+                this.setState({dogPhoto:res.message,loading:false,foundDog:breedOfDog,message:''});
             }else {
                 this.setState({message:"Nie znaleziono psa o podanej rasie :(",loading:false,dogPhoto:null,foundDog:null});
             }
