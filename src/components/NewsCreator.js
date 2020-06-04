@@ -25,7 +25,7 @@ class NewsCreator extends React.Component {
 
         this.state = {
             naglowek:'',
-            opis:'',
+            tresc:'',
             loading: false,
             message: ''
         }
@@ -39,7 +39,7 @@ class NewsCreator extends React.Component {
 
       onChangeDescription(e) {
         this.setState({
-          opis: e.target.value
+          tresc: e.target.value
         });
       }
 
@@ -59,14 +59,14 @@ class NewsCreator extends React.Component {
 
         if (this.checkBtn.context._errors.length === 0){
             
-            const {naglowek,opis} = this.state;
+            const {naglowek,tresc} = this.state;
            
 
             let url = 'https://psipatrol.herokuapp.com/api/newsy';
             let options = {
             method: 'POST',
             headers: authHeader(),
-            body: JSON.stringify({naglowek,opis})
+            body: JSON.stringify({naglowek,tresc})
           };
 
 
@@ -112,7 +112,7 @@ class NewsCreator extends React.Component {
             
             <div class="form-group">
                 <label for="exampleFormOfferDescription">Treść newsa</label>
-                <textarea required value={this.state.opis} validations={[required]} onChange={this.onChangeDescription} class="form-control" id="exampleFormOfferDescription" rows="3"></textarea>
+                <textarea required value={this.state.tresc} validations={[required]} onChange={this.onChangeDescription} class="form-control" id="exampleFormOfferDescription" rows="3"></textarea>
             </div>
         
 
