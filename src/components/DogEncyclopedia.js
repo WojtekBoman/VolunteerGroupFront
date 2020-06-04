@@ -32,7 +32,7 @@ class DogEncyclopedia extends React.Component {
 
         const {breedOfDog} = this.state;
 
-        let url = `https://dog.ceo/api/breed/${breedOfDog.toLowerCase()}/images/random`;
+        let url = `https://dog.ceo/api/breed/${breedOfDog.toLowerCase().trim()}/images/random`;
         let options = {
             method: 'GET'
           };
