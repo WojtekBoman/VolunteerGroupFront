@@ -6,3 +6,7 @@ body{
     background-image: linear-gradient(to left bottom, #56ed7d, #5ab557, #4f8039, #3a5022, #1f2511);
     margin: 0;
 }
+
+#footer {
+  margin-top: 300px;
+}

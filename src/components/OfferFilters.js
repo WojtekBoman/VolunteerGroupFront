@@ -26,16 +26,16 @@ class OfferFilters extends React.Component {
 
                 <div class="col-sm-3 d-flex flex-column">
                     <label>Tytul</label>
-                    <input type="text" id="kategoriaFrom" value={this.props.titleState} onChange={this.props.titleUpdate} />
+                    <input type="text" id="titleFrom" value={this.props.titleState} onChange={this.props.titleUpdate} />
                 </div>
 
                 <div class="col-sm-3 d-flex flex-column">
                     <label>Imię</label>
-                    <input type="text" id="miejsceFrom" value={this.props.nameState} onChange={this.props.nameUpdate} />
+                    <input type="text" id="nameFrom" value={this.props.nameState} onChange={this.props.nameUpdate} />
                 </div>
 
                 <div className="col-sm-3 d-flex align-items-end">
-                    <button class="btn btn-primary btn-block" onClick={this.props.filterOffers}> Zastosuj filtry </button>
+                    <button id="filterButton" class="btn btn-primary btn-block" onClick={this.props.filterOffers}> Zastosuj filtry </button>
                     
                 </div>
 

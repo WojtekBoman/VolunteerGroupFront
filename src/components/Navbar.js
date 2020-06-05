@@ -100,6 +100,28 @@ class Navbar extends React.Component{
                     Ekran przewodniczącego
                     </li>
                   </Link> */}
+                  <Link to={"/tworzenieNewsa"} className="nav-link">
+                  <li id="addNewsMenu" className="nav-item">
+                    Dodaj news
+                    </li>
+                  </Link>
+                  <Link to={"/zbiorki"} className="nav-link">
+                  <li className="nav-item">
+                    Zbiórki
+                    </li>
+                  </Link>
+                  <Link to={"/oferty"} className="nav-link">
+                  <li className="nav-item">
+                    Oferty
+                    </li>
+                  </Link>
+                  <li class="nav-item dropdown">
+                  <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Statystyki</a>
+                  <div class="dropdown-menu">
+                        <Link to={"/wykresAktywnosci"} className="dropdown-item">Aktywność</Link>
+                        <Link to={"/wykresWydarzen"} className="dropdown-item">Zbiórki</Link>
+                    </div>
+                  </li>
                   <li class="nav-item dropdown">
                   <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Wydarzenia</a>
                   <div class="dropdown-menu">
@@ -125,8 +147,8 @@ class Navbar extends React.Component{
                   <li class="nav-item dropdown">
                   <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Oferty</a>
                   <div class="dropdown-menu">
-                        <Link to={"/oferty"} className="dropdown-item">Przeglądaj</Link>
-                        <Link to={"/nowaOferta"} className="dropdown-item">Dodaj</Link>
+                        <Link id="showOffersLink" to={"/oferty"} className="dropdown-item">Przeglądaj</Link>
+                        <Link id="addOfferLink" to={"/nowaOferta"} className="dropdown-item">Dodaj</Link>
                     </div>
                   </li>
 
@@ -161,13 +183,7 @@ class Navbar extends React.Component{
                         <Link to={"/nowaWiadomosc"} className="dropdown-item">Wyślij wiadomość</Link>
                     </div>
                   </li>
-                  <li class="nav-item dropdown">
-                  <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Statystyki</a>
-                  <div class="dropdown-menu">
-                        <Link to={"/wykresAktywnosci"} className="dropdown-item">Aktywność</Link>
-                        <Link to={"/wykresWydarzen"} className="dropdown-item">Zbiórki</Link>
-                    </div>
-                  </li>
+                  
                 <Link to={"/userEvents"} className="nav-link">
                   <li className="nav-item">
                     Twoje wydarzenia
@@ -179,7 +195,7 @@ class Navbar extends React.Component{
                     </li>
                   </Link>
                     <li class="nav-item" onClick={this.logout}>
-                        <a class="nav-link" href="">Wyloguj</a>
+                        <a id="logoutRef" class="nav-link" href="">Wyloguj</a>
                     </li>
                     
                     
@@ -190,7 +206,7 @@ class Navbar extends React.Component{
     
                     <Link to="/logowanie">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logowanie</a>
+                        <a id="loginPageRef" class="nav-link" href="#">Logowanie</a>
                     </li>
                     </Link>
                     <Link to="/rejestracja"> 
@@ -202,6 +218,15 @@ class Navbar extends React.Component{
             </div>
 
             )}
+
+            <div className="navbar-nav">
+            <Link to="/encyklopedia">
+            <li class="nav-item">
+                        <a id="encyklopediaRef"class="nav-link" href="#">Encyklopedia</a>
+                    </li>
+            </Link>
+            </div>
+
             </div>
         </nav>
         )

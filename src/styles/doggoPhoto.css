@@ -1,0 +1,9 @@
+#doggoPhoto {
+    margin:50px auto;
+    padding: 25px;
+    
+}
+
+#doggoPhoto img {
+    max-width: 80%;
+}

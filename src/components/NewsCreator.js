@@ -2,8 +2,7 @@ import React from 'react'
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import authHeader from "../services/auth-header"
-
+import authHeader from "../services/auth-header";
 
 const required = value => {
     if (!value) {
@@ -15,54 +14,38 @@ const required = value => {
     }
   };
 
- 
 
-
-  class OfferCreator extends React.Component {
+class NewsCreator extends React.Component {
 
     constructor(props) {
         super(props);
-        this.handleOffer = this.handleOffer.bind(this);
+        this.handleNews = this.handleNews.bind(this);
         this.onChangeTitle = this.onChangeTitle.bind(this);
-        this.onChangePetName = this.onChangePetName.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
-        this.onChangeFoto = this.onChangeFoto.bind(this);
 
         this.state = {
-            tytul:'',
-            imie:'',
-            opis:'',
-            zdjecie:'',
+            naglowek:'',
+            tresc:'',
             loading: false,
             message: ''
         }
     }
     onChangeTitle(e) {
         this.setState({
-          tytul: e.target.value
+          naglowek: e.target.value
         });
       }
 
-  
-      onChangePetName(e) {
-        this.setState({
-          imie: e.target.value
-        });
-      }
 
       onChangeDescription(e) {
         this.setState({
-          opis: e.target.value
+          tresc: e.target.value
         });
       }
 
-      onChangeFoto(e) {
-        this.setState({
-          zdjecie: e.target.value
-        });
-      }
+      
 
-      handleOffer(e) {
+      handleNews(e) {
         e.preventDefault();
 
         this.setState({
@@ -76,22 +59,21 @@ const required = value => {
 
         if (this.checkBtn.context._errors.length === 0){
             
-            const {tytul,opis,imie,zdjecie} = this.state;
-            const data = {tytul,opis,imie,zdjecie};
-            console.log(JSON.stringify({tytul,opis,imie,zdjecie}));
+            const {naglowek,tresc} = this.state;
+           
 
-            let url = 'https://psipatrol.herokuapp.com/api/oferty';
+            let url = 'https://psipatrol.herokuapp.com/api/newsy';
             let options = {
             method: 'POST',
             headers: authHeader(),
-            body: JSON.stringify({tytul,opis,imie,zdjecie})
+            body: JSON.stringify({naglowek,tresc})
           };
 
 
           fetch(url,options)
           .then(
             () => {
-              this.props.history.push("/oferty");
+              this.props.history.push("/");
               window.location.reload(false);
             },
             error => {
@@ -119,40 +101,30 @@ const required = value => {
         return (
             <div class="container bg-light border rounded border-dark" id="createForm">
                 <header>
-                    <h2>Utwórz nową ofertę</h2>
+                    <h2>Utwórz nowego newsa</h2>
                     <hr className="my-4"/>
                 </header>
-                <Form onSubmit={this.handleOffer} ref={c => this.form = c}>
+                <Form onSubmit={this.handleNews} ref={c => this.form = c}>
             <div class="form-group">
-            <label for="exampleInputEventTitle">Tytuł oferty</label>
-            <Input value={this.state.tytul} validations={[required]} onChange={this.onChangeTitle} type="text" className="form-control" id="exampleInputEventTitle" placeholder="Wprowadź nazwę oferty" validations={[required]}/>
+            <label for="exampleInputEventTitle">Tytuł newsa</label>
+            <Input value={this.state.naglowek} validations={[required]} onChange={this.onChangeTitle} type="text" className="form-control" id="exampleInputEventTitle" placeholder="Wprowadź tytuł newsa" validations={[required]}/>
             </div>
             
             <div class="form-group">
-            <label for="exampleInputPetName">Imię zwierzaka</label>
-            <Input value={this.state.imie} validations={[required]} onChange={this.onChangePetName} type="text" className="form-control" id="examplePetName" placeholder="Wprowadź imię zwierzaka" validations={[required]}/>
-            </div>
-
-            <div class="form-group">
-            <label for="exampleInputPetName">Zdjęcie</label>
-            <Input value={this.state.zdjecie} validations={[required]} onChange={this.onChangeFoto} type="text" className="form-control" id="exampleFoto" placeholder="Podaj link do zdjęcia" validations={[required]}/>
-            </div>
-            
-            <div class="form-group">
-                <label for="exampleFormOfferDescription">Opis oferty</label>
-                <textarea required value={this.state.opis} validations={[required]} onChange={this.onChangeDescription} class="form-control" id="exampleFormOfferDescription" rows="3"></textarea>
+                <label for="exampleFormOfferDescription">Treść newsa</label>
+                <textarea required value={this.state.tresc} validations={[required]} onChange={this.onChangeDescription} class="form-control" id="exampleFormOfferDescription" rows="3"></textarea>
             </div>
         
 
         <div className="form-group">
-              <button id="addOfferButton"
+              <button id="addNewsButton"
                 className="btn btn-block btn-dark"
                 disabled={this.state.loading}
               >
                 {this.state.loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}
-                <span>Dodaj ofertę</span>
+                <span>Dodaj newsa</span>
               </button>
             </div>
 
@@ -176,6 +148,6 @@ const required = value => {
         )
     }
 
-  }
+}
 
-  export default OfferCreator;
+export default NewsCreator;
