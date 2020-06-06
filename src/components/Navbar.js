@@ -134,16 +134,6 @@ class Navbar extends React.Component{
                         <Link to={"/noweWydarzenie"} className="dropdown-item">Dodaj</Link>
                     </div>
                   </li>
-                  <Link to={"/oferty"} className="nav-link">
-                  <li className="nav-item">
-                    Oferty
-                    </li>
-                  </Link>
-                  <Link to={"/zbiorki"} className="nav-link">
-                  <li className="nav-item">
-                    Zbiórki
-                    </li>
-                  </Link>
                   </div>
               )}  
 
@@ -203,12 +193,12 @@ class Navbar extends React.Component{
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
     
-                    <Link to="/logowanie">
+                    <Link to="/logowanie" className="nav-link">
                     <li class="nav-item">
                         <a id="loginPageRef" class="nav-link" href="#">Logowanie</a>
                     </li>
                     </Link>
-                    <Link to="/rejestracja"> 
+                    <Link to="/rejestracja" className="nav-link"> 
                     <li class="nav-item">
                         <a class="nav-link" href="#">Rejestracja</a>
                     </li>
@@ -219,7 +209,7 @@ class Navbar extends React.Component{
             )}
 
             <div className="navbar-nav">
-            <Link to="/encyklopedia">
+            <Link to="/encyklopedia" className="nav-link">
             <li class="nav-item">
                         <a id="encyklopediaRef"class="nav-link" href="#">Encyklopedia</a>
                     </li>

@@ -11,6 +11,7 @@ export default class Profile extends Component {
     console.log(AuthService.getCurrentUser());
     this.state = {
       currentUser: AuthService.getCurrentUser()
+      
     };
   }
 
@@ -35,7 +36,7 @@ export default class Profile extends Component {
       </div>
       <Link className="link-button" to="/wiadomosci"><button className="btn btn-dark btn-block">Wiadomości</button></Link>
       <Link className="link-button" to="/wydarzenia"><button className="btn btn-dark btn-block">Wydarzenia</button></Link>
-      <Link className="link-button" to="/userEvents"><button className="btn btn-dark btn-block">Twoje wydarzenia</button></Link>
+      {this.state.currentUser.roles.includes("ROLE_WOLONTARIUSZ") && (<Link className="link-button" to="/userEvents"><button className="btn btn-dark btn-block">Twoje wydarzenia</button></Link>)}
       <Link className="link-button" to="/zbiorki"><button className="btn btn-dark btn-block">Zbiórki</button></Link>
       <Link className="link-button" to="/oferty"><button className="btn btn-dark btn-block">Oferty</button></Link>
    
