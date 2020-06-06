@@ -75,6 +75,11 @@ class Navbar extends React.Component{
                     Wiadomości
                     </li>
                   </Link> */}
+                  <Link to={"/userEvents"} className="nav-link">
+                  <li className="nav-item">
+                    Twoje wydarzenia
+                    </li>
+                  </Link>
                   <Link to={"/zbiorki"} className="nav-link">
                   <li className="nav-item">
                     Zbiórki
@@ -183,12 +188,6 @@ class Navbar extends React.Component{
                         <Link to={"/nowaWiadomosc"} className="dropdown-item">Wyślij wiadomość</Link>
                     </div>
                   </li>
-                  
-                <Link to={"/userEvents"} className="nav-link">
-                  <li className="nav-item">
-                    Twoje wydarzenia
-                    </li>
-                  </Link>
                   <Link to={"/profile"} className="nav-link">
                   <li className="nav-item">
                     {currentUser.email}

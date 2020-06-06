@@ -1,7 +1,7 @@
 import React from 'react';
 import eventService from '../../services/event-service';
 import participationService from '../../services/participation-service';
-import authService from '../../services/auth-service';
+import AuthService from '../../services/auth-service';
 import authHeader from '../../services/auth-header';
 import {
     BrowserRouter as Router,
@@ -28,7 +28,8 @@ class EventDetails extends React.Component {
             message: '',
             uzytkownicy:null,
             udzial:false,
-            isFull: false
+            isFull: false,
+            isVolunteer:false
         }
     }
 
@@ -58,13 +59,18 @@ class EventDetails extends React.Component {
     }
 
     async componentDidMount() {
+        const user = AuthService.getCurrentUser();
+
+
         const {data} = await eventService.getWydarzeniaId(this.props.match.params.id)
-        this.setState({loading: false,data})
+        this.setState({loading: false,data,isVolunteer: user.roles.includes("ROLE_WOLONTARIUSZ"),})
         console.log(data);
         const isFull = data.liczbaPotrzebnychWolontariuszy == data.liczbaPrzypisanychWolontariuszy;
         this.setState({isFull});
 
         this.getWydarzeniaUzytkownika();
+
+
     }
 
     handleParticipation(e) {
@@ -138,27 +144,35 @@ class EventDetails extends React.Component {
                         
                         <p>{this.state.data.opis}</p>
 
-                        {this.state.loadingButtons ? ( <span className="spinner-border spinner-border-sm"></span>)
-                        : (<div>
-                        {this.state.udzial && (<button class="btn btn-danger btn-lg" onClick={this.handleCancelParticipation} 
-                        style={{margin:"5px"}} href="#" role="button">
-                            {this.state.cancelLoading && (
-                            <span className="spinner-border spinner-border-sm"></span>
-                        )}  Anuluj udział</button>)}
-
-                        {!this.state.isFull && !this.state.udzial && (<button class="btn btn-success btn-lg" onClick={this.handleParticipation} 
-                        style={{margin:"5px"}} href="#" role="button">
-                        {this.state.submitLoading && (
-                            <span className="spinner-border spinner-border-sm"></span>
-                        )} Weź udział </button>)}
-                        
-                        <Link to="/wydarzenia"><button class="btn btn-primary btn-lg" 
-                        style={{margin:"5px"}} role="button">Wróć do wydarzeń</button></Link>
-                        </div>)    
-                   
-                        }
-
-
+                        {this.state.isVolunteer ? (
+                            <div>
+                            {this.state.loadingButtons ? ( <span className="spinner-border spinner-border-sm"></span>)
+                            : (<div>
+                            {this.state.udzial && (<button class="btn btn-danger btn-lg" onClick={this.handleCancelParticipation} 
+                            style={{margin:"5px"}} href="#" role="button">
+                                {this.state.cancelLoading && (
+                                <span className="spinner-border spinner-border-sm"></span>
+                            )}  Anuluj udział</button>)}
+    
+                            {!this.state.isFull && !this.state.udzial && (<button class="btn btn-success btn-lg" onClick={this.handleParticipation} 
+                            style={{margin:"5px"}} href="#" role="button">
+                            {this.state.submitLoading && (
+                                <span className="spinner-border spinner-border-sm"></span>
+                            )} Weź udział </button>)}
+                            
+                            <Link to="/wydarzenia"><button class="btn btn-primary btn-lg" 
+                            style={{margin:"5px"}} role="button">Wróć do wydarzeń</button></Link>
+                            </div>)    
+                       
+                            }
+                            </div>
+                        )
+                        :
+                        (
+                            <Link to="/wydarzenia"><button class="btn btn-primary btn-lg" 
+                            style={{margin:"5px"}} role="button">Wróć do wydarzeń</button></Link>
+                        )
+                    }
 
                         {this.state.message && (
               <div className="form-group">

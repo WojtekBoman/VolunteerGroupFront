@@ -9,6 +9,12 @@
     width: 40%;
 }
 
+@media (max-width: 800px) {
+    #logForm{
+        width: 100%;
+    }
+}
+
 #createForm{
     margin: 200px auto;
     padding: 50px;

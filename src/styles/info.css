@@ -1,3 +1,11 @@
-#info {
-    margin: 200px auto;
+#info{
+    margin: 150px auto;
+    padding: 50px;
+    width: 40%;
 }
+
+@media (max-width: 970px) {
+    #info{
+        width:100%;
+    }
+  }
