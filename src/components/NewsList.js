@@ -41,7 +41,7 @@ class NewsList extends React.Component {
         console.log("Newsy",this.state.newsy);
 
             return (
-                <div class="container">
+                <div class="container" id="news">
                     {this.state.newsy && (this.state.newsy.map(news => 
                     <News key={news.idNewsa}  dataDodania={news.dataDodania} tresc={news.tresc} naglowek={news.naglowek} />))}
 

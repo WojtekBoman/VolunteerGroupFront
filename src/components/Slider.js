@@ -10,6 +10,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { HashLink} from 'react-router-hash-link';
 
 class Slider extends React.Component {
 
@@ -56,14 +57,14 @@ class Slider extends React.Component {
                 <img class="d-block w-100" src={background2} alt="Second slide"/>
                 <div class="carousel-caption">
                     <h1 class="display-2">Aktualności</h1>
-                    <a href="#news"><button type="button" class="btn btn-outline-light btn-lg">Przeglądaj</button></a>
+                    <HashLink to="#news"><button type="button" class="btn btn-outline-light btn-lg">Przeglądaj</button></HashLink>
                 </div>
             </div>
           <div class="carousel-item">
             <img class="d-block w-100" src={background3} alt="Third slide"/>
             <div class="carousel-caption">
                 <h1 class="display-2">Masz pytania ?</h1>
-                <a href="#footer"><button type="button" class="btn btn-outline-light btn-lg">Kontakt</button></a>
+                <HashLink to="#footer"><button type="button" class="btn btn-outline-light btn-lg">Kontakt</button></HashLink>
             </div>
           </div>
           
